@@ -10,5 +10,3 @@ export class TeacherModel{
         this.name = name;
     }
 }
-
-
