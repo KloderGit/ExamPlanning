@@ -1,4 +1,6 @@
-
+import { TeacherModel } from './Models/teacher.model';
+import { Observable } from 'rxjs/Observable';
+import { ServiseFromJson } from './Services/servise-from-json'
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: 'app.component.html'
 })
 export class AppComponent implements OnInit {
-    constructor() { }
 
-    ngOnInit() { }
+    repos: Observable<TeacherModel[]>;
+
+    constructor( private service: ServiseFromJson ) { }
+
+    ngOnInit() { 
+		this.repos = this.service.getTeachers2();        
+    }
+
 }
