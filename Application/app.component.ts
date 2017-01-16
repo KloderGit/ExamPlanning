@@ -11,11 +11,15 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
     repos: Observable<TeacherModel[]>;
+    rep;
 
     constructor( private service: ServiseFromJson ) { }
 
     ngOnInit() { 
-		this.repos = this.service.getTeachers2();        
+		this.service.getTeachers2().subscribe( res => { this.rep = res; });        
     }
 
+    dd(){
+        this.service.getTeachers3();
+    }
 }
