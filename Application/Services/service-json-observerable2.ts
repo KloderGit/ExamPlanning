@@ -33,13 +33,4 @@ export class ServiceFromJsonObservable {
     }, error => console.log('Could not load todos.'));
   }
 
-  create(todo: TeacherModel) {
-    console.log(todo);
-    this.http.post(`${this.baseUrl}/`, JSON.stringify(todo))
-      .map(response => response.json()).subscribe(data => {
-        console.log(data);
-        this.dataStore.todos.push(todo);      // Вместо todo нужно вставлять полученный элемент data
-        this._todos.next(Object.assign({}, this.dataStore).todos);
-      }, error => console.log('Could not create todo.'));
-  }
 }

@@ -19,13 +19,13 @@ export class AppComponent implements OnInit {
     constructor( private service: ServiseFromJson, private Oservice: ServiceFromJsonObservable ) { }
 
     ngOnInit() { 
-		this.service.getTeachers2().subscribe( res => { this.rep = res; });   
+		// this.service.getTeachers2().subscribe( res => { this.rep = res; });   
 
             this.rere = this.Oservice.todos;
             this.Oservice.loadAll();
     }
 
     dd(){
-        console.log( this.Oservice.load('111') );
+        this.Oservice.create( new TeacherModel ('000', 'Tarkan') );
     }
 }
