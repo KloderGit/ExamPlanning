@@ -33,6 +33,25 @@ export class ServiceFromJsonObservable {
     }, error => console.log('Could not load todos.'));
   }
 
+   load(id: number | string) {
+    this.http.get(`${this.baseUrl}/${id}`).map(response => response.json()).subscribe(data => {
+      let notFound = true;
+
+      this.dataStore.todos.forEach((item, index) => {
+        if (item.id === data.id) {
+          this.dataStore.todos[index] = data;
+          notFound = false;
+        }
+      });
+
+      if (notFound) {
+        this.dataStore.todos.push(data);
+      }
+
+      this._todos.next(Object.assign({}, this.dataStore).todos);
+    }, error => console.log('Could not load todo.'));
+  }
+
   create(todo: TeacherModel) {
     console.log(todo);
     this.http.post(`${this.baseUrl}/`, JSON.stringify(todo))
