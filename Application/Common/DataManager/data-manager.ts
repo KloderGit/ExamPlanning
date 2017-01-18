@@ -19,4 +19,10 @@ export class DataManager {
        return this.disciplines;
     }
 
+    getDiscipline( id: string){
+        let index = this.disciplines.map(x => x.id).indexOf(id);
+        return this.disciplines[index];
+    }
+
+
 }

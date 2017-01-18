@@ -1,9 +1,3 @@
-
-<!--
-<p *ngFor="let item of getDisciplines()">
-    {{item.title}}
-</p>-->
-
 <div class="card" style="width: 24rem; float: left; margin-right: 20px" *ngFor="let discipine of getDisciplines()">
   <div class="card-header">
     {{discipine.format}} <span class="badge badge-primary">{{discipine.active}}</span>
@@ -14,9 +8,10 @@
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Преподаватель: {{discipine.teacherId}}</li>
-    <li class="list-group-item">Свободных мест: ..</li>
+    <li class="list-group-item">Форма обучения: {{discipine.format}}</li>
+    <li class="list-group-item">Активность: {{discipine.active}}</li>
   </ul>
   <div class="card-block">
-    <a href="#" class="card-link">Планирование</a>
+    <a routerLink="/discipline/{{discipine.id}}" class="card-link">Планирование</a>
   </div>
 </div>
