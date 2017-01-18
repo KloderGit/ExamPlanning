@@ -1,5 +1,6 @@
 node_modules/
 .idea/
 *.log
+symbols.json
 Application/**/*.js
 Application/**/*.map

@@ -1,6 +1,8 @@
 {
-  "name": "the-basics-of-angular-2",
+  "name": "examplanning",
   "version": "1.0.0",
+  "description": "> Планирование экзаменов.",
+  "main": "system.config.js",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "lite": "lite-server",
@@ -8,12 +10,16 @@
     "tsc:w": "tsc -w",
     "go": "concurrent \"npm run tsc:w\" \"npm run lite\" "
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/angular/angular.io/blob/master/LICENSE"
-    }
-  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KloderGit/ExamPlanning.git"
+  },
+  "author": "Kloder",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KloderGit/ExamPlanning/issues"
+  },
+  "homepage": "https://github.com/KloderGit/ExamPlanning#readme",
   "dependencies": {
     "@angular/common": "~2.1.1",
     "@angular/compiler": "~2.1.1",
