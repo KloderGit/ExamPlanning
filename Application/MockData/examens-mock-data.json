@@ -1,0 +1,29 @@
+[{
+        "id": "exam-111",
+        "guid": "exam-1111-1111-1111",
+        "disciplineId": "111",
+        "startTime": "2016, 7, 10, 13, 10",
+        "endTime": "2016, 7, 10, 13, 20"
+    },
+    {
+        "id": "exam-222",
+        "guid": "exam-2222-2222-2222",
+        "disciplineId": "111",
+        "startTime": "2016, 7, 12, 14, 10",
+        "endTime": "2016, 7, 12, 14, 20"
+    },
+    {
+        "id": "exam-333",
+        "guid": "exam-3333-3333-3333",
+        "disciplineId": "222",
+        "startTime": "2016, 7, 14, 16, 10",
+        "endTime": "2016, 7, 14, 16, 20"
+    },
+    {
+        "id": "exam-4444",
+        "guid": "exam-4444-4444-4444",
+        "disciplineId": "222",
+        "startTime": "2016, 7, 18, 18, 10",
+        "endTime": "2016, 7, 18, 18, 20"
+    }
+]

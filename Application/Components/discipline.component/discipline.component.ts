@@ -1,5 +1,5 @@
 import { DataManager } from './../../Common/DataManager/data-manager';
-import { Discipline } from './../../Models/discipline.model';
+import { DisciplineModel } from './../../Models/discipline.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 
 export class DisciplineComponent implements OnInit {
 
-	discipline: Discipline;
+	discipline: DisciplineModel;
 
 	constructor( private route: ActivatedRoute,
 				 private dataManager: DataManager){}

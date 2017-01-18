@@ -1,4 +1,4 @@
-import { Discipline } from './../Models/discipline.model';
+import { DisciplineModel } from './../Models/discipline.model';
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http'
 import 'rxjs/Rx';
@@ -16,7 +16,7 @@ export class ServiseFromJson{
         return this.http.get('/Application/MockData/discipline.mock.data.json')
         .toPromise()
         .then( ( res ) => { 
-               let temp = res.json() as Discipline[]; 
+               let temp = res.json() as DisciplineModel[]; 
                console.log('Service: Сервис получил дисциплины'); 
                return temp; }
         );
