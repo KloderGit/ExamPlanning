@@ -1,6 +1,4 @@
-import { ServiceFromJsonObservable } from './Services/service-json-observerable';
 import { TeacherModel } from './Models/teacher.model';
-import { Observable } from 'rxjs/Observable';
 import { ServiseFromJson } from './Services/servise-from-json'
 import { Component, OnInit } from '@angular/core';
 
@@ -11,21 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-    repos: Observable<TeacherModel[]>;
+    teachers: TeacherModel[];
 
-    rere: Observable<TeacherModel[]>;
-    rep;
-
-    constructor( private service: ServiseFromJson, private Oservice: ServiceFromJsonObservable ) { }
+    constructor( private service: ServiseFromJson ) { 
+        this.teachers = new Array();
+    }
 
     ngOnInit() { 
-		// this.service.getTeachers2().subscribe( res => { this.rep = res; });   
-
-            this.rere = this.Oservice.todos;
-            this.Oservice.loadAll();
+		this.service.getTeachers()
+        .then( data => this.teachers = data );
     }
 
-    dd(){
-        this.Oservice.create( new TeacherModel ('000', 'Tarkan') );
-    }
 }
