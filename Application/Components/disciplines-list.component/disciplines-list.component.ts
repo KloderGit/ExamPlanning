@@ -17,7 +17,4 @@ export class DisciplinesListComponent implements OnInit {
 		return this.dataManager.getDisciplinesAll();
 	}
 
-	ddd(){
-		// console.log(this.dataManager.disciplines);
-	}
 }
