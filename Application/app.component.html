@@ -1,5 +1,5 @@
 <!--<button (click)="dd()">sdsd</button>-->
-<div class="container">
+<!--<div class="container">
   <div class="row">
 
     <div class="card" style="width: 24rem; float: left; margin-right: 20px" *ngFor="let item of discipline | async">
@@ -20,8 +20,31 @@
     </div>
 
   </div>
-</div>
+</div>-->
 
 <!--<p *ngFor="let item of dataManager.getTeachers()">
   {{item.id}} - {{item.name}}
 </p>-->
+
+<div class="container">
+    <div class="header clearfix">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+
+                        <li class="active"><a routerLink="/calendar">Calendar <span class="sr-only">(current)</span></a></li>
+                        <!--<li><a routerLink="/addEvent/{{ddd}}">Add</a></li>-->
+                        <!--<li><a routerLink="/register-list/{{ddd}}">Link</a></li>-->
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+    <a ></a>
+    <!--<button (click)="dddd()">Go to sidekicks</button>-->
+<br/>
+    <router-outlet></router-outlet>
+</div>

@@ -7,9 +7,16 @@ import { ServiseFromJson } from './../Services/servise-from-json'
 import { ServiceFromJsonObservable } from './../Services/service-json-observerable'
 
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+
+var routerMaps = RouterModule.forRoot([
+    // { path: 'calendar', component: SheduleComponent },
+    { path: '', component: AppComponent },
+    { path: '**', component: AppComponent }
+]);
 
 @NgModule({
-    imports: [ BrowserModule, FormsModule, HttpModule  ],
+    imports: [ BrowserModule, FormsModule, HttpModule, routerMaps ],
     declarations: [ AppComponent ],
     bootstrap: [ AppComponent ],
     providers: [ ServiseFromJson, DataManager ]
