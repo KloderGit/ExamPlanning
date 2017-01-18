@@ -1,5 +1,6 @@
+import { Discipline } from './Models/discipline.model';
+import { DataManager } from './Common/DataManager/data-manager';
 import { TeacherModel } from './Models/teacher.model';
-import { ServiseFromJson } from './Services/servise-from-json'
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,15 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-    teachers: TeacherModel[];
+    discipline: Promise<Discipline[]>
 
-    constructor( private service: ServiseFromJson ) { 
-        this.teachers = new Array();
-    }
+    constructor( private dataManager: DataManager ) {}
 
     ngOnInit() { 
-		this.service.getTeachers()
-        .then( data => this.teachers = data );
+        this.discipline = this.dataManager.getDisciplinesAll();
     }
+
+
 
 }

@@ -1,12 +1,27 @@
-
-<h1>OOOOOOOOOOOOOOO</h1>
-<!--
-<p *ngFor="let item of rep">
-    {{item.id}}
-</p>
--->
 <!--<button (click)="dd()">sdsd</button>-->
+<div class="container">
+  <div class="row">
 
-<p *ngFor="let item of teachers">
-    {{item.id}} - {{item.name}}
-</p>
+    <div class="card" style="width: 24rem; float: left; margin-right: 20px" *ngFor="let item of discipline | async">
+      <div class="card-header">
+        {{item.format}} <span class="badge badge-primary">{{item.active}}</span>
+      </div>
+      <div class="card-block">
+        <h4 class="card-title">{{item.title}}</h4>
+        <p class="card-text">Основной экзамен</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Преодаватель: </li>
+        <li class="list-group-item">Свободных мест: </li>
+      </ul>
+      <div class="card-block">
+        <a href="#" class="card-link">Планирование</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!--<p *ngFor="let item of dataManager.getTeachers()">
+  {{item.id}} - {{item.name}}
+</p>-->

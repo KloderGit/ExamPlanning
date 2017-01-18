@@ -1,3 +1,4 @@
+import { DataManager } from './../Common/DataManager/data-manager';
 import { AppComponent } from './../App.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,7 +12,7 @@ import { HttpModule } from '@angular/http';
     imports: [ BrowserModule, FormsModule, HttpModule  ],
     declarations: [ AppComponent ],
     bootstrap: [ AppComponent ],
-    providers: [ ServiseFromJson, ServiceFromJsonObservable ]
+    providers: [ ServiseFromJson, DataManager ]
 })
 
 export class MainModule {}

@@ -1,3 +1,4 @@
+import { Discipline } from './../Models/discipline.model';
 import { Injectable, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http'
 import 'rxjs/Rx';
@@ -16,4 +17,9 @@ export class ServiseFromJson implements OnInit{
         .then( res => res.json() as TeacherModel[] );
     }
 
+    getDisciplinesAll(){
+        return this.http.get('/Application/MockData/discipline.mock.data.json')
+        .toPromise()
+        .then( res => res.json() as Discipline[] );
+    }
 }
