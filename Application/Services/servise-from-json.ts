@@ -1,25 +1,24 @@
 import { Discipline } from './../Models/discipline.model';
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http'
 import 'rxjs/Rx';
 
 import { TeacherModel } from './../Models/teacher.model';
 
 @Injectable()
-export class ServiseFromJson implements OnInit{
-    constructor ( private http: Http ){}
+export class ServiseFromJson{
 
-    ngOnInit(){}
-
-    getTeachers(){
-        return this.http.get('/Application/MockData/teachers-mock-data.json')
-        .toPromise()
-        .then( res => res.json() as TeacherModel[] );
+    constructor ( private http: Http ){
+        console.log('Service: Создан сервис');
     }
 
     getDisciplinesAll(){
         return this.http.get('/Application/MockData/discipline.mock.data.json')
         .toPromise()
-        .then( res => res.json() as Discipline[] );
+        .then( ( res ) => { 
+               let temp = res.json() as Discipline[]; 
+               console.log('Service: Сервис получил дисциплины'); 
+               return temp; }
+        );
     }
 }

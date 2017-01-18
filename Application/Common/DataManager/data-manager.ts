@@ -1,28 +1,22 @@
 import { Discipline } from './../../Models/discipline.model';
 import { TeacherModel } from './../../Models/teacher.model';
 import { ServiseFromJson } from './../../Services/servise-from-json';
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable()
-export class DataManager implements OnInit{
+export class DataManager {
 
-    teachers: TeacherModel[];
+    disciplines: Discipline[] = new Array();
 
     constructor( private service: ServiseFromJson ){
-        this.teachers = [];
-    }
+        console.log('Создание DataManager');
 
-    ngOnInit(){
-        // this.service.getTeachers().then( data => this.teachers = data );
-        this.getDisciplinesAll();
-    }
-
-    getTeachers(){
-        return this.teachers;
+        this.service.getDisciplinesAll()
+                    .then( data => { this.disciplines = data; console.log('DataManager: Получены дисциплины из сервиса') } );
     }
 
     getDisciplinesAll(){
-       return this.service.getDisciplinesAll();        
+       return this.disciplines;
     }
 
 }

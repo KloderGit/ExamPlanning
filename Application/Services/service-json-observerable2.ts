@@ -10,7 +10,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class ServiceFromJsonObservable {
+export class ServiceFromJsonObservable2 {
   
   todos: Observable<TeacherModel[]> // То, что получат остальные
   private _todos: BehaviorSubject<TeacherModel[]>;  //За этим будет следить todos

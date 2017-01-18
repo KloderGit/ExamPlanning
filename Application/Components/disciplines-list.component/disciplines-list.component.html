@@ -1,0 +1,22 @@
+
+<!--
+<p *ngFor="let item of getDisciplines()">
+    {{item.title}}
+</p>-->
+
+<div class="card" style="width: 24rem; float: left; margin-right: 20px" *ngFor="let discipine of getDisciplines()">
+  <div class="card-header">
+    {{discipine.format}} <span class="badge badge-primary">{{discipine.active}}</span>
+  </div>
+  <div class="card-block">
+    <h4 class="card-title">{{discipine.title}}</h4>
+    <p class="card-text">Нет описания</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Преподаватель: {{discipine.teacherId}}</li>
+    <li class="list-group-item">Свободных мест: ..</li>
+  </ul>
+  <div class="card-block">
+    <a href="#" class="card-link">Планирование</a>
+  </div>
+</div>
