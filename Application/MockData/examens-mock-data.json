@@ -1,0 +1,43 @@
+[{
+        "id": "exam-111",
+        "guid": "exam-1111-1111-1111",
+        "disciplineId": "disc-111",
+        "startTime": "2016/8/11 10:10",
+        "endTime": "2016/8/11 11:20"
+    },
+    {
+        "id": "exam-222-0",
+        "guid": "exam-2222-2222-2222",
+        "disciplineId": "disc-111",
+        "startTime": "2017/1/14 14:10",
+        "endTime": "2017/1/14 14:10"
+    },
+    {
+        "id": "exam-222-1",
+        "guid": "exam-2222-2222-2222",
+        "disciplineId": "disc-111",
+        "startTime": "2017/1/21 14:10",
+        "endTime": "2017/1/21 14:20"
+    },
+    {
+        "id": "exam-222-3",
+        "guid": "exam-2222-2222-2222",
+        "disciplineId": "disc-111",
+        "startTime": "2016/7/12 10:10",
+        "endTime": "2016/7/12 11:10"
+    },        
+    {
+        "id": "exam-333",
+        "guid": "exam-3333-3333-3333",
+        "disciplineId": "disc-222",
+        "startTime": "2016/9/16 13:10",
+        "endTime": "2016/9/16 13:40"
+    },
+    {
+        "id": "exam-4444",
+        "guid": "exam-4444-4444-4444",
+        "disciplineId": "disc-222",
+        "startTime": "2016/3/18 14:10",
+        "endTime": "2016/3/18 14:10"
+    }
+]

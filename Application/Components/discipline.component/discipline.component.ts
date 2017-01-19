@@ -1,7 +1,8 @@
+import { ExamenModel } from './../../Models/examen.model';
 import { DataManager } from './../../Common/DataManager/data-manager';
-import { Discipline } from './../../Models/discipline.model';
+import { DisciplineModel } from './../../Models/discipline.model';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
 	moduleId: module.id,
@@ -11,13 +12,37 @@ import { ActivatedRoute } from '@angular/router';
 
 export class DisciplineComponent implements OnInit {
 
-	discipline: Discipline;
+	discipline: DisciplineModel;
 
 	constructor( private route: ActivatedRoute,
-				 private dataManager: DataManager){}
+				 private router: Router,
+				 private dataManager: DataManager){
+		console.log("Создан компонент Дисциплины");
+	}
 
 	ngOnInit() {
-		let id = this.route.snapshot.params['id'];
+		let id = this.route.snapshot.params['id'];		
 		this.discipline = this.dataManager.getDiscipline(id);
+
+		if ( this.discipline == undefined ) {
+			this.router.navigate(['/disciplines']); 
+		} else {
+			if ( this.getExamens().length == 0 ){ this.loadMonth( new Date().getMonth() ) }			
+		}
 	}
+
+	getExamens(){		
+		return this.dataManager.getExamensByDiscipline( this.discipline.id );
+	}
+
+	loadMonth( month: number ){
+		this.dataManager.getExamensFromService( this.discipline.id, month );
+	}
+
+
+	rrr(){
+		this.dataManager.examens.push( new ExamenModel( "rrrr", "2017/1/5 15:00", "2017/1/5 15:40", "disc-111") );
+		console.log( this.dataManager.examens );
+	}
+
 }

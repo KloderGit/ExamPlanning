@@ -13,6 +13,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 var routerMaps = RouterModule.forRoot([
+    { path: 'disciplines', component: DisciplinesListComponent },
     { path: 'discipline/:id', component: DisciplineComponent },
     { path: '', component: DisciplinesListComponent },
     { path: '**', component: DisciplinesListComponent }

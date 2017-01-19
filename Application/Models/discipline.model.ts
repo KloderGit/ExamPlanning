@@ -1,5 +1,5 @@
 
-export class Discipline{
+export class DisciplineModel{
 
     id: string;
     guid: string;
