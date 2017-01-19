@@ -3,3 +3,10 @@
     <h2>{{discipline?.title}}</h2>
     <p>Планирование экзаменов</p>
 </div>
+
+<button (click) = "loadMonth(7)"> adsdsd </button>
+<button (click) = "rrr()"> adsdsd </button>
+
+<div *ngIf="discipline != undefined" >
+    <p *ngFor="let item of getExamens()">{{item.id}}</p>
+</div>
