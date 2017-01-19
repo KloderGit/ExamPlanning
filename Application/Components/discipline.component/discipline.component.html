@@ -7,6 +7,9 @@
 <button (click) = "loadMonth(7)"> adsdsd </button>
 <button (click) = "rrr()"> adsdsd </button>
 
+
 <div *ngIf="discipline != undefined" >
-    <p *ngFor="let item of getExamens()">{{item.id}}</p>
+    <month  *ngFor="let month of getExamens() | monthFromExamens" 
+            [examens] = "getExamens() | examensForMonth : month">
+    </month>
 </div>
