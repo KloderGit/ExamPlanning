@@ -1,5 +1,8 @@
 <div style="width: 600px; min-height: 100px; background-color: #4bd">
     <h3>{{examens[0].startTime | date:"dd/MM/yyyy"}}</h3>
+
+        <h3>{{ rrr() }}</h3>
+
     <div *ngFor="let item of examens">
         <p>{{item.id}}</p>
     </div>

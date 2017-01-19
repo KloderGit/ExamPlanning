@@ -19,4 +19,8 @@ export class MonthComponent implements OnInit {
 	ngOnInit() {
 		this.grid = new MonthGrid( this.examens[0].startTime );
 	}
+
+	rrr(){
+		return +this.examens[0].startTime;
+	}
 }

@@ -40,7 +40,7 @@ export class DataManager {
                                for( let i=0; i< data.length; i++){
                                    this.examens.push(data[i]);
                                }                               
-                               console.log('DataManager: Получены экзамены из сервиса на месяц - ' + month, data) 
+                               console.log('DataManager: Получены экзамены из сервиса на месяц - ' + year + "/" + month) 
                             }
                      );
     }

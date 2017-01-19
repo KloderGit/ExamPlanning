@@ -5,9 +5,10 @@ import { Pipe, PipeTransform } from '@angular/core';
     name: 'examensForMonth'
 })
 export class ExamensForMonthPipe implements PipeTransform {
-  transform(array: ExamenModel[], date: number) {
+  transform(array: ExamenModel[], timestamp: number) {
+    let tempDate = new Date (timestamp);
     return array.filter( function(item){
-      return +item.startTime.getMonth() == +date;
+      return (item.startTime.getFullYear() == tempDate.getFullYear()) && (item.startTime.getMonth() == tempDate.getMonth());
     });
   }
 }
