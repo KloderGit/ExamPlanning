@@ -27,7 +27,7 @@ export class DisciplineComponent implements OnInit {
 		if ( this.discipline == undefined ) {
 			this.router.navigate(['/disciplines']); 
 		} else {
-			if ( this.getExamens().length == 0 ){ this.loadMonth( new Date().getMonth() ) }			
+			if ( this.getExamens().length == 0 ){ this.loadMonth( new Date().getFullYear(), new Date().getMonth() ) }			
 		}
 	}
 
@@ -35,10 +35,32 @@ export class DisciplineComponent implements OnInit {
 		return this.dataManager.getExamensByDiscipline( this.discipline.id );
 	}
 
-	loadMonth( month: number ){
-		this.dataManager.getExamensFromService( this.discipline.id, month );
+	loadMonth( year: number, month: number ){
+		this.dataManager.getExamensFromService( this.discipline.id, year, month );
 	}
 
+	getMinMonth(){
+		let months = this.getExamens().map( item => +item.startTime );
+		let min = Math.min.apply( Math, months );
+		let date = new Date(min);
+		date.setMonth(date.getMonth()-1);
+
+		this.loadMonth( date.getFullYear(), date.getMonth() );
+	}
+
+	getMaxMonth(){
+		let months = this.getExamens().map( item => +item.startTime );
+		let min = Math.max.apply( Math, months );
+		let date = new Date(min);
+		date.setMonth(date.getMonth()+1);
+		
+		this.loadMonth( date.getFullYear(), date.getMonth() );
+	}
+
+
+	ttt(){
+		this.dataManager.getExamensFromServiceAll( this.discipline.id );
+	}
 
 	rrr(){
 		this.dataManager.examens.push( new ExamenModel( "rrrr", "2017/1/5 15:00", "2017/1/5 15:40", "disc-111") );

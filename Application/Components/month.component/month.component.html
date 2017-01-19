@@ -20,7 +20,7 @@
 <tr *ngFor = "let week of grid.weeks">
     <td *ngFor = "let day of week.days">
         <div style="min-height: 50px; padding: 5px;" (click)="selectDay(day)">
-            <!--{{day.inmonth}}-->
+            {{day.inmonth}}
             {{day.date.getDate()}}
             <!--<day [event]="events | event:day.date"></day>-->
         </div>
@@ -28,9 +28,9 @@
         <a (click)="toShared(day)">add</a>
     </td>
 </tr>
-    <!--<tfoot>
+    <tfoot>
         <tr>
-            <td colspan="7">Всего запланированных дней: {{events.length}}</td>
+            <td colspan="7">Всего запланированных дней: {{examens.length}}</td>
         </tr>
-    </tfoot>-->
+    </tfoot>
 </table>

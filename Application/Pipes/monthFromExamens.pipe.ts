@@ -8,9 +8,7 @@ export class MonthFromExamensPipe implements PipeTransform {
   transform(array: ExamenModel[]) {
 
       return array.map( item => +item.startTime.getMonth() )
-                  .filter(function(value, index, _this) {
-    	                return _this.indexOf(value) === index;
-                });
-
+                  .filter( (value, index, _this) => _this.indexOf(value) === index )
+                  .sort();
   }
 }
