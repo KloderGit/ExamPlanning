@@ -1,7 +1,7 @@
 import { ExamenModel } from './../../Models/examen.model';
 import { DataManager } from './../../Common/DataManager/data-manager';
 import { DisciplineModel } from './../../Models/discipline.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -13,6 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DisciplineComponent implements OnInit {
 
 	discipline: DisciplineModel;
+	@Input() examens: ExamenModel[] = [];
 
 	constructor( private route: ActivatedRoute,
 				 private router: Router,
@@ -27,7 +28,7 @@ export class DisciplineComponent implements OnInit {
 		if ( this.discipline == undefined ) {
 			this.router.navigate(['/disciplines']); 
 		} else {
-			if ( this.getExamens().length == 0 ){ this.loadMonth( new Date().getFullYear(), new Date().getMonth() ) }			
+			if ( this.examens.length == 0 ){ this.loadMonth( new Date().getFullYear(), new Date().getMonth() ) }			
 		}
 	}
 
@@ -37,6 +38,17 @@ export class DisciplineComponent implements OnInit {
 
 	loadMonth( year: number, month: number ){
 		this.dataManager.getExamensFromService( this.discipline.id, year, month );
+	}
+
+	loadNextOrPreviusMonth( direction: boolean ){
+		let months = this.examens.map( item => +item.startTime );
+
+		let toggle = direction ? 1: -1;
+		let timestamp = direction ? Math.max.apply( Math, months ) : Math.min.apply( Math, months );
+		let date = new Date(timestamp);
+		date.setMonth(date.getMonth() + toggle);
+
+		this.loadMonth( date.getFullYear(), date.getMonth() );		
 	}
 
 	getMinMonth(){
