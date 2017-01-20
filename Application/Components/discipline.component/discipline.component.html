@@ -4,15 +4,12 @@
     <p>Планирование экзаменов</p>
 </div>
 
-<button (click) = "getMinMonth()"> Загрузить предыдущий месяц </button>
-<button (click) = "getMaxMonth()"> Загрузить следующий месяц </button>
+<button (click) = "loadNextOrPreviusMonth(false)"> Загрузить предыдущий месяц </button>
+<button (click) = "loadNextOrPreviusMonth(true)"> Загрузить следующий месяц </button>
 
-<button (click) = "loadNextOrPreviusMonth(true)"> Загрузить предыдущий месяц </button>
-<button (click) = "loadNextOrPreviusMonth(false)"> Загрузить следующий месяц </button>
+  <input type="month" #inputMonth />
+  <button (click) = "loadNextOrPreviusMonth(inputMonth.value)">Загрузить</button>
 
-
-
-<button (click) = "rrr()"> adsdsd </button>
 <button (click) = "ttt()"> adsdsd </button>
 
 

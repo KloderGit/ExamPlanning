@@ -1,4 +1,4 @@
-import { ExamenModel } from './../../Models/examen.model';
+// import { ExamenModel } from './../../Models/examen.model';
 import { DataManager } from './../../Common/DataManager/data-manager';
 import { DisciplineModel } from './../../Models/discipline.model';
 import { Component, OnInit, Input } from '@angular/core';
@@ -13,7 +13,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DisciplineComponent implements OnInit {
 
 	discipline: DisciplineModel;
-	@Input() examens: ExamenModel[] = [];
 
 	constructor( private route: ActivatedRoute,
 				 private router: Router,
@@ -28,7 +27,7 @@ export class DisciplineComponent implements OnInit {
 		if ( this.discipline == undefined ) {
 			this.router.navigate(['/disciplines']); 
 		} else {
-			if ( this.examens.length == 0 ){ this.loadMonth( new Date().getFullYear(), new Date().getMonth() ) }			
+			if ( this.getExamens().length == 0 ){ this.loadMonth( new Date().getFullYear(), new Date().getMonth() ) }			
 		}
 	}
 
@@ -40,43 +39,44 @@ export class DisciplineComponent implements OnInit {
 		this.dataManager.getExamensFromService( this.discipline.id, year, month );
 	}
 
-	loadNextOrPreviusMonth( direction: boolean ){
-		let months = this.examens.map( item => +item.startTime );
+	loadNextOrPreviusMonth( direction?: boolean, anyMonth?: string ){
+		let year: number;
+		let month: number;
 
-		let toggle = direction ? 1: -1;
-		let timestamp = direction ? Math.max.apply( Math, months ) : Math.min.apply( Math, months );
-		let date = new Date(timestamp);
-		date.setMonth(date.getMonth() + toggle);
+		console.log(direction, anyMonth);
+		// anyMonth = new Date("2016/11/14 14:10");
 
-		this.loadMonth( date.getFullYear(), date.getMonth() );		
+		if ( anyMonth == undefined ) {
+			let months = this.getExamens().map( item => +item.startTime );
+
+			let toggle = direction ? 1: -1;
+			let timestamp = direction ? Math.max.apply( Math, months ) : Math.min.apply( Math, months );
+			let date = new Date(timestamp);
+			date.setMonth(date.getMonth() + toggle);
+			year = date.getFullYear();
+			month = date.getMonth();
+		} else {
+			let array = anyMonth.split('-');
+			year = parseInt(array[0]);
+			month = parseInt(array[1]);
+			console.log(parseInt(array[0]), parseInt(array[1]));
+		}
+
+		this.loadMonth( year, month );		
 	}
 
-	getMinMonth(){
-		let months = this.getExamens().map( item => +item.startTime );
-		let min = Math.min.apply( Math, months );
-		let date = new Date(min);
-		date.setMonth(date.getMonth()-1);
-
-		this.loadMonth( date.getFullYear(), date.getMonth() );
+	selectAnyMonth( month: string ){
+		let array = month.split('-');
+		this.loadMonth( parseInt(array[0]), parseInt(array[1]) );
 	}
 
-	getMaxMonth(){
-		let months = this.getExamens().map( item => +item.startTime );
-		let min = Math.max.apply( Math, months );
-		let date = new Date(min);
-		date.setMonth(date.getMonth()+1);
-		
-		this.loadMonth( date.getFullYear(), date.getMonth() );
+	rrr( m ){
+		console.log( typeof(m), m );
 	}
-
 
 	ttt(){
 		this.dataManager.getExamensFromServiceAll( this.discipline.id );
 	}
 
-	rrr(){
-		this.dataManager.examens.push( new ExamenModel( "rrrr", "2017/1/5 15:00", "2017/1/5 15:40", "disc-111") );
-		console.log( this.dataManager.examens );
-	}
 
 }
