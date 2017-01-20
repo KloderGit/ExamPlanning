@@ -1,6 +1,6 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h4>{{examens[0].startTime | date:"MM yyyy"}}</h4>
+    <h4>{{getMonthName()}}</h4>
   </div>
   <div class="panel-body">
     <table class="table table-hover table-bordered">
@@ -16,8 +16,8 @@
     </tr>
     <tr *ngFor = "let week of grid.weeks">
         <td *ngFor = "let day of week.days">
-            <div style="min-height: 50px; padding: 5px;" (click)="selectDay(day)">
-                {{day.inmonth}}
+            <div (click)="selectDay(day)" [class.inMonth] = "day.inmonth">
+                <!--{{day.inmonth}}-->
                 {{day.date.getDate()}}
                 <!--<day [event]="events | event:day.date"></day>-->
             </div>

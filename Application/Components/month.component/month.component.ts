@@ -20,7 +20,9 @@ export class MonthComponent implements OnInit {
 		this.grid = new MonthGrid( this.examens[0].startTime );
 	}
 
-	rrr(){
-		return +this.examens[0].startTime;
-	}
+	getMonthName(){
+		let str = this.examens[0].startTime.toLocaleString("ru-ru", { month: "long" }) + " " + this.examens[0].startTime.getFullYear();
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    } 
+
 }
