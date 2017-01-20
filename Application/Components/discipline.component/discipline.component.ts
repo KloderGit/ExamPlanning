@@ -4,6 +4,8 @@ import { DisciplineModel } from './../../Models/discipline.model';
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+declare var $:any;
+
 @Component({
 	moduleId: module.id,
 	selector: 'discipline',
@@ -29,6 +31,16 @@ export class DisciplineComponent implements OnInit {
 		} else {
 			if ( this.getExamens().length == 0 ){ this.loadMonth( new Date().getFullYear(), new Date().getMonth() ) }			
 		}
+		this.dataPickerInit();
+	}
+
+
+	dataPickerInit(){
+		$('.datepicker-here').datepicker({
+			autoClose: true,
+			altField: "#dataPickerAlternate",
+			altFieldDateFormat: "yyyy:m"
+		});
 	}
 
 	getExamens(){		
@@ -43,10 +55,6 @@ export class DisciplineComponent implements OnInit {
 		let year: number;
 		let month: number;
 
-		console.log(direction, anyMonth);
-		// anyMonth = new Date("2016/11/14 14:10");
-
-		if ( anyMonth == undefined ) {
 			let months = this.getExamens().map( item => +item.startTime );
 
 			let toggle = direction ? 1: -1;
@@ -55,19 +63,16 @@ export class DisciplineComponent implements OnInit {
 			date.setMonth(date.getMonth() + toggle);
 			year = date.getFullYear();
 			month = date.getMonth();
-		} else {
-			let array = anyMonth.split('-');
-			year = parseInt(array[0]);
-			month = parseInt(array[1]);
-			console.log(parseInt(array[0]), parseInt(array[1]));
-		}
 
 		this.loadMonth( year, month );		
 	}
 
-	selectAnyMonth( month: string ){
-		let array = month.split('-');
-		this.loadMonth( parseInt(array[0]), parseInt(array[1]) );
+	selectAnyMonth( anyMonth: string ){
+		let array = anyMonth.split(':');
+		let year = parseInt(array[0]);
+		let month = parseInt(array[1]) - 1;
+
+		this.loadMonth( year, month );
 	}
 
 	rrr( m ){

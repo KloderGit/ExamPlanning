@@ -7,8 +7,16 @@
 <button (click) = "loadNextOrPreviusMonth(false)"> Загрузить предыдущий месяц </button>
 <button (click) = "loadNextOrPreviusMonth(true)"> Загрузить следующий месяц </button>
 
-  <input type="month" #inputMonth />
-  <button (click) = "loadNextOrPreviusMonth(inputMonth.value)">Загрузить</button>
+<input type="text" 
+    id = "selectMonts"
+    class="datepicker-here"
+    data-min-view="months"
+    data-view="months"
+    data-date-format="MM yyyy" 
+    />
+<input style="display: none" type="text" id="dataPickerAlternate" #inputMonth/>
+
+  <button (click) = "selectAnyMonth(inputMonth.value)">Загрузить</button>
 
 <button (click) = "ttt()"> adsdsd </button>
 
