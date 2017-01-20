@@ -1,7 +1,6 @@
-// import { ExamenModel } from './../../Models/examen.model';
 import { DataManager } from './../../Common/DataManager/data-manager';
 import { DisciplineModel } from './../../Models/discipline.model';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 declare var $:any;
@@ -31,6 +30,7 @@ export class DisciplineComponent implements OnInit {
 		} else {
 			if ( this.getExamens().length == 0 ){ this.loadMonth( new Date().getFullYear(), new Date().getMonth() ) }			
 		}
+
 		this.dataPickerInit();
 	}
 
@@ -68,6 +68,12 @@ export class DisciplineComponent implements OnInit {
 	}
 
 	selectAnyMonth( anyMonth: string ){
+
+		if ( anyMonth =="" || anyMonth == undefined){
+			alert("Укажите месяц для загрузки!");
+			return;
+		}
+
 		let array = anyMonth.split(':');
 		let year = parseInt(array[0]);
 		let month = parseInt(array[1]) - 1;
@@ -75,13 +81,8 @@ export class DisciplineComponent implements OnInit {
 		this.loadMonth( year, month );
 	}
 
-	rrr( m ){
-		console.log( typeof(m), m );
+	rrr(){
+		// console.log( this.examens );
 	}
-
-	ttt(){
-		this.dataManager.getExamensFromServiceAll( this.discipline.id );
-	}
-
 
 }

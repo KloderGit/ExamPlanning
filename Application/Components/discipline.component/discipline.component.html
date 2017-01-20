@@ -1,28 +1,32 @@
-
 <div class="jumbotron text-center">
-    <h2>{{discipline?.title}}</h2>
-    <p>Планирование экзаменов</p>
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>{{discipline?.title}}</h2>
+            <p>Планирование экзаменов</p>
+        </div>
+        <div class="col-sm-4">
+            <div class="btn-group-vertical" role="group">
+                <button class="btn btn-default" (click)="loadNextOrPreviusMonth(false)"> Загрузить предыдущий месяц </button>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">
+                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                    </span>
+                    <input type="text" id="selectMonts" class="datepicker-here form-control" data-min-view="months" data-view="months" data-date-format="MM yyyy"
+                        placeholder="Загрузить на выбор..." />
+                    <input style="display: none" type="text" id="dataPickerAlternate" #inputMonth/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" (click) = "selectAnyMonth(inputMonth.value)">Загрузить</button>
+                    </span>
+                </div>
+                <button class="btn btn-default" (click)="loadNextOrPreviusMonth(true)"> Загрузить следующий месяц </button>
+            </div>
+        </div>
+    </div>
 </div>
 
-<button (click) = "loadNextOrPreviusMonth(false)"> Загрузить предыдущий месяц </button>
-<button (click) = "loadNextOrPreviusMonth(true)"> Загрузить следующий месяц </button>
+<!--<button (click)="rrr()"> adsdsd </button>-->
 
-<input type="text" 
-    id = "selectMonts"
-    class="datepicker-here"
-    data-min-view="months"
-    data-view="months"
-    data-date-format="MM yyyy" 
-    />
-<input style="display: none" type="text" id="dataPickerAlternate" #inputMonth/>
-
-  <button (click) = "selectAnyMonth(inputMonth.value)">Загрузить</button>
-
-<button (click) = "ttt()"> adsdsd </button>
-
-
-<div *ngIf="discipline != undefined" >
-    <month  *ngFor="let month of getExamens() | monthFromExamens" 
-            [examens] = "getExamens() | examensForMonth : month">
+<div *ngIf="discipline != undefined">
+    <month *ngFor="let month of getExamens() | monthFromExamens" [examens]="getExamens() | examensForMonth : month">
     </month>
 </div>
