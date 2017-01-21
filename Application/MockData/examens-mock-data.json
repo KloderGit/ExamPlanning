@@ -19,7 +19,14 @@
         "disciplineId": "disc-111",
         "startTime": "2017/1/12 14:10",
         "endTime": "2017/1/12 14:10"
-    },    
+    },
+    {
+        "id": "exam-2017/1/12",
+        "guid": "exam-2222-2222-2222",
+        "disciplineId": "disc-111",
+        "startTime": "2017/1/12 10:10",
+        "endTime": "2017/1/12 10:10"
+    },     
     {
         "id": "exam-2017/1/14",
         "guid": "exam-2222-2222-2222",

@@ -10,5 +10,5 @@ import { Component, OnInit, Input } from '@angular/core';
 export class DayOfCalendarComponent implements OnInit {
 	@Input() examens: ExamenModel[];
 
-	ngOnInit() { }
+	ngOnInit() {}
 }
