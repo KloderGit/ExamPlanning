@@ -1,9 +1,12 @@
+
+<p *ngFor="let examen of examens">{{examen.startTime}}</p>
+
 <div class="panel panel-default">
   <div class="panel-heading">
     <h4>{{getMonthName()}}</h4>
   </div>
   <div class="panel-body">
-    <table class="table table-hover table-bordered">
+    <table class="table table-bordered">
     <!--<caption><h4 class="monthName">{{getMonthName()}}</h4></caption>-->
     <tr>
         <th>Пн.</th>
@@ -16,13 +19,14 @@
     </tr>
     <tr *ngFor = "let week of grid.weeks">
         <td *ngFor = "let day of week.days">
-            <div (click)="selectDay(day)" [class.inMonth] = "day.inmonth">
-                <!--{{day.inmonth}}-->
-                {{day.date.getDate()}}
-                <!--<day [event]="events | event:day.date"></day>-->
+            <div style="position: relative" [class.inMonth] = "day.inmonth" [class.outOfMonth] = "!day.inmonth">
+                <div style="position: absolute; top: -3px; left: -3px; border-radius: 50%; border: 2px solid #4fa; width: 30px; height: 30px; text-align: center; line-height: 30px;">
+                    {{day.date.getDate()}}
+                </div>
+                <div>
+                    <dayOfCalendar [examens]="examens | examensForDay:day.date"></dayOfCalendar>
+                </div>                                
             </div>
-            <a (click)="addEvent(day)">add</a>
-            <a (click)="toShared(day)">add</a>
         </td>
     </tr>
         <tfoot>

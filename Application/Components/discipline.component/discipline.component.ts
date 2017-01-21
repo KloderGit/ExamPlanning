@@ -43,7 +43,7 @@ export class DisciplineComponent implements OnInit {
 		});
 	}
 
-	getExamens(){		
+	getExamens(){
 		return this.dataManager.getExamensByDiscipline( this.discipline.id );
 	}
 

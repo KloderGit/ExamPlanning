@@ -1,3 +1,5 @@
+import { DayOfCalendarComponent } from './../Components/dayOfCalendar.component/dayOfCalendar.component';
+import { ExamensForDayPipe } from './../Pipes/examensForDay';
 import { MonthComponent } from './../Components/month.component/month.component';
 import { DisciplineComponent } from './../Components/discipline.component/discipline.component';
 import { DisciplinesListComponent } from './../Components/disciplines-list.component/disciplines-list.component';
@@ -24,7 +26,9 @@ var routerMaps = RouterModule.forRoot([
 
 @NgModule({
     imports: [ BrowserModule, FormsModule, HttpModule, routerMaps ],
-    declarations: [ AppComponent, DisciplinesListComponent, DisciplineComponent, MonthComponent, MonthFromExamensPipe, ExamensForMonthPipe ],
+    declarations: [ AppComponent, DisciplinesListComponent, DisciplineComponent, 
+                    MonthComponent, MonthFromExamensPipe, 
+                    ExamensForMonthPipe, ExamensForDayPipe, DayOfCalendarComponent ],
     bootstrap: [ AppComponent ],
     providers: [ ServiseFromJson, DataManager ]
 })
