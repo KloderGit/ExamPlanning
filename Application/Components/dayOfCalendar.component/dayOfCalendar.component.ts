@@ -14,12 +14,18 @@ export class DayOfCalendarComponent implements OnInit {
 	@Input() examens: ExamenModel[];
 
 	ngOnInit() {
-		$(".donut-chart").peity("donut", {
+		$(".pie-chart").peity("donut", {
 					radius: 30,
-		fill: ["#bf4040", "#bfbf40", "#80bf40", "#40bf40", "#eeeeee" ],
+					fill: function(_, i, all) {
+						let colors = [ "rgb(255, 92, 92)", "rgb(255, 173, 92)", "rgb(204, 255, 102)", "rgb(39, 235, 0)", "rgb(204, 204, 204)" ];
+						// var g = parseInt((i / all.length) * 255);
+						// return "rgb(255, " + g + "," + (g-10) + ")";
+						return colors[i];
+					}
+		// fill: ["#bf4040", "#bfbf40", "#80bf40", "#40bf40", "#eeeeee" ],
 		});
 
-	$(".pie-chart").peity("pie", {
+	$(".donut-chart").peity("pie", {
 		radius: 30,
 		fill: ["#00bfff",  "#cccccc" ],
 		})
