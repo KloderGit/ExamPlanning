@@ -1,5 +1,5 @@
 import { ExamenModel } from './../../Models/examen.model';
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 declare var $:any;
 
@@ -10,30 +10,44 @@ declare var $:any;
 	styleUrls: ['dayOfCalendar.component.css']
 })
 
-export class DayOfCalendarComponent implements OnInit {
+export class DayOfCalendarComponent implements OnInit, AfterViewInit {
 	@Input() examens: ExamenModel[];
 	@ViewChild("popoverTag") popoverTag: ElementRef;
+	@ViewChild("donutChart") donutChart: ElementRef;
+	@ViewChild("pieChart") pieChart: ElementRef;
 
-	ngOnInit() {
+	ngOnInit() {}
 
-		// console.log(this.popoverTag, this.donutChart , this.pieChart);
+	ngAfterViewInit(){
 
-		$(".donut-chart").peity("donut", {
-					radius: 30,
-					fill: function(_, i, all) {
+		if ( this.pieChart != undefined){
+			$(this.pieChart.nativeElement).peity("pie", {
+				radius: 30,
+				fill: ["#00bfff",  "#cccccc" ]
+			});
+		}
+		
+		if (this.donutChart != undefined){
+			$(this.donutChart.nativeElement).peity("donut", {
+				radius: 30,
+				fill: function(_, i, all) {
 						let colors = [ "rgb(255, 92, 92)", "rgb(255, 173, 92)", "rgb(204, 255, 102)", "rgb(39, 235, 0)", "rgb(204, 204, 204)" ];
 						return colors[i];
 					}
-		});
+			});
+		}
 
-		$(".pie-chart").peity("pie", {
-			radius: 30,
-			fill: ["#00bfff",  "#cccccc" ]
-		});
+		let popupString: string;
 
-		$(this.popoverTag.nativeElement).popover({
-			'html':true,    
-    		content: `
+		if ( this.isFuture() ){
+			popupString = `
+			<div class = "popover-content">
+				<p><strong>День</strong></p>
+				<p>Записано:` + this.countInvited().length + `</p>
+			</div>
+			`;
+		} else {
+ 			popupString = `
 			<div class = "popover-content">
 				<p><strong>День</strong></p>
 				<ul>
@@ -44,9 +58,17 @@ export class DayOfCalendarComponent implements OnInit {
 					<li>` + this.isNone() + `%: Пустых или Пропущенных</li>
 				</ul>
 			</div>
-		`
+			`;
+		}
+
+		$(this.popoverTag.nativeElement).popover({
+			'html':true,    
+    		content: popupString
 		});
 	}
+
+
+
 
 	isFuture(){
 		return +this.examens[0].startTime > +new Date();

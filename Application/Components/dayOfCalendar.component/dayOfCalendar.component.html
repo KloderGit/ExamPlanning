@@ -4,8 +4,8 @@
     <div *ngIf="examens.length" class="dayOfCalendar">
         {{percentAccepted()}}%
         <div class="day-chart">
-            <span  *ngIf="!isFuture()" class="donut-chart">{{ isNeud() }},{{ isThre() }},{{ isFour() }},{{ isFive() }},{{ isNone() }}</span>
-            <span  *ngIf="isFuture()" class="pie-chart" data-peity='{ "innerRadius": 22, "radius": 28 }'>{{invitedString()}}</span>
+            <span #donutChart *ngIf="!isFuture()" class="donut-chart">{{ isNeud() }},{{ isThre() }},{{ isFour() }},{{ isFive() }},{{ isNone() }}</span>
+            <span #pieChart *ngIf="isFuture()" class="pie-chart" data-peity='{ "innerRadius": 22, "radius": 28 }'>{{invitedString()}}</span>
         </div>
     </div>
 </a>
