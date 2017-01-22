@@ -2,8 +2,18 @@
     <span *ngFor="let examen of examens">{{examen.id}}</span>
 </div>-->
 
-<div *ngIf="examens.length" class="dayOfCalendar"
-    style="width: 60px; height: 60px; background-color: #eee; margin: 0 auto; border-radius: 50%;">
-    <!--<span *ngFor="let examen of examens">{{examen.disciplineId}}</span>-->
-    {{examens.length}}
+<div *ngIf="examens.length" class="dayOfCalendar">
+{{percentInvite()}}%
+<div class="day-chart">
+  <span *ngIf="!isFuture()" class="donut-chart" >
+        {{ isNeud() }},
+        {{ isThre() }},
+        {{ isFour() }},
+        {{ isFive() }},
+        {{ isNone() }}
+ </span>
+  <span *ngIf="isFuture()" class="pie-chart" 
+        data-peity='{ "fill": ["green", "#eeeeee"],  "innerRadius": 22, "radius": 28 }'>{{invitedString()}}</span>
+</div>
+<!--<button (click) = "ddd()">ss</button>-->
 </div>

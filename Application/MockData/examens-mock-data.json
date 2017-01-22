@@ -1,100 +1,443 @@
 [    
-    {
-        "id": "exam-2016/11/14",
-        "guid": "exam-2222-2222-2222",
-        "disciplineId": "disc-111",
-        "startTime": "2016/11/14 14:10",
-        "endTime": "2016/11/14 14:10"
-    },
-    {
-        "id": "exam-2016/12/14",
-        "guid": "exam-2222-2222-2222",
-        "disciplineId": "disc-111",
-        "startTime": "2016/12/14 14:10",
-        "endTime": "2016/12/14 14:10"
-    },
-    {
-        "id": "exam-2017/1/12",
-        "guid": "exam-2222-2222-2222",
-        "disciplineId": "disc-111",
-        "startTime": "2017/1/12 14:10",
-        "endTime": "2017/1/12 14:10"
-    },
-    {
-        "id": "exam-2017/1/12",
-        "guid": "exam-2222-2222-2222",
-        "disciplineId": "disc-111",
-        "startTime": "2017/1/12 10:10",
-        "endTime": "2017/1/12 10:10"
-    },     
-    {
-        "id": "exam-2017/1/14",
-        "guid": "exam-2222-2222-2222",
-        "disciplineId": "disc-111",
-        "startTime": "2017/1/14 14:10",
-        "endTime": "2017/1/14 14:10"
-    },
-    {
-        "id": "exam-2017/2/14",
-        "guid": "exam-2222-2222-2222",
-        "disciplineId": "disc-111",
-        "startTime": "2017/2/14 14:10",
-        "endTime": "2017/2/14 14:10"
-    },        
-    {
-        "id": "exam-2016/10/14",
-        "guid": "exam-2222-2222-2222",
-        "disciplineId": "disc-222",
-        "startTime": "2016/10/14 14:10",
-        "endTime": "2016/10/14 14:10"
-    },
-    {
-        "id": "exam-2016/12/14",
-        "guid": "exam-2222-2222-2222",
-        "disciplineId": "disc-222",
-        "startTime": "2016/12/14 14:10",
-        "endTime": "2016/12/14 14:10"
-    },
-    {
-        "id": "exam-2017/1/14",
-        "guid": "exam-2222-2222-2222",
-        "disciplineId": "disc-222",
-        "startTime": "2017/1/14 14:10",
-        "endTime": "2017/1/14 14:10"
-    },
-    {
-        "id": "exam-2017/2/14",
-        "guid": "exam-2222-2222-2222",
-        "disciplineId": "disc-222",
-        "startTime": "2017/2/14 14:10",
-        "endTime": "2017/2/14 14:10"
-    },
-    {
-        "id": "exam-2016/10/14",
-        "guid": "exam-2222-2222-2222",
-        "disciplineId": "disc-333",
-        "startTime": "2016/10/14 14:10",
-        "endTime": "2016/10/14 14:10"
-    },
-    {
-        "id": "exam-2016/12/14",
-        "guid": "exam-2222-2222-2222",
-        "disciplineId": "disc-333",
-        "startTime": "2016/12/14 14:10",
-        "endTime": "2016/12/14 14:10"
-    },
-    {
-        "id": "exam-2017/1/14",
-        "guid": "exam-2222-2222-2222",
-        "disciplineId": "disc-333",
-        "startTime": "2017/1/14 14:10",
-        "endTime": "2017/1/14 14:10"
-    },
-    {
-        "id": "exam-2017/2/14",
-        "guid": "exam-2222-2222-2222",
-        "disciplineId": "disc-333",
-        "startTime": "2017/2/14 14:10",
-        "endTime": "2017/2/14 14:10"
-    }
+  {
+    "id": 608,
+    "guid": "a6d8a29a-a3dc-4221-a5b0-d2227eca256a",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/10 19:58",
+    "studentplace": true,
+    "student": "Glenna Sykes",
+    "rate": 2
+  },
+  {
+    "id": 863,
+    "guid": "f3f92ef4-fec3-484d-bad8-e8f4eeecb2a7",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/10 12:40",
+    "studentplace": true,
+    "student": "Mcclain Solis",
+    "rate": 1
+  },
+  {
+    "id": 186,
+    "guid": "c4b67ca4-f51d-4a29-a740-49cba471ec28",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/10 19:30",
+    "studentplace": false,
+    "student": "Thomas Winters",
+    "rate": 0
+  },
+  {
+    "id": 67,
+    "guid": "8bac5a2a-7922-4b46-bf6b-cf003f293147",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/10 17:12",
+    "studentplace": false,
+    "student": "Shirley Allen",
+    "rate": 0
+  },
+  {
+    "id": 609,
+    "guid": "297208c3-a8ec-4050-9f42-9bfba1a51896",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/10 21:1",
+    "studentplace": false,
+    "student": "Lowe Carr",
+    "rate": 0
+  },
+  {
+    "id": 415,
+    "guid": "b8e03cc5-51c9-471b-a919-18f1f52ef562",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/10 17:28",
+    "studentplace": true,
+    "student": "Franco Ellis",
+    "rate": 4
+  },
+  {
+    "id": 650,
+    "guid": "07c32910-da26-4a1c-888b-f9c988f7392b",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/10 12:8",
+    "studentplace": false,
+    "student": "Fleming Lee",
+    "rate": 3
+  },
+  {
+    "id": 777,
+    "guid": "12f17d7e-cfed-4aa8-bef2-960ac998d1d7",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/10 19:54",
+    "studentplace": true,
+    "student": "Nanette Cherry",
+    "rate": 2
+  },
+  {
+    "id": 47,
+    "guid": "0ebcabe9-cfe5-4aa3-86e4-e8ca7a3bb210",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/10 10:22",
+    "studentplace": true,
+    "student": "Fernandez Cervantes",
+    "rate": 3
+  },
+  {
+    "id": 25,
+    "guid": "e0c36652-ecb2-401b-ba4d-e70e6575436e",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/10 11:26",
+    "studentplace": true,
+    "student": "Emily Wagner",
+    "rate": 3
+  },
+  {
+    "id": 188,
+    "guid": "67203120-c22c-460d-bd76-667e2a36ae10",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/10 12:13",
+    "studentplace": false,
+    "student": "Pearson Holman",
+    "rate": 4
+  },
+  {
+    "id": 610,
+    "guid": "2575a4ca-436c-4b09-b8c5-ab249809c481",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/10 19:33",
+    "studentplace": true,
+    "student": "Gillespie Howe",
+    "rate": 5
+  },
+  {
+    "id": 943,
+    "guid": "8fb7a856-add9-424a-91ae-92ddd64bc917",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/10 12:44",
+    "studentplace": false,
+    "student": "Wade Heath",
+    "rate": 1
+  },
+  {
+    "id": 824,
+    "guid": "9c34d38d-aa29-4327-91bf-bc52dcceec4f",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/10 12:26",
+    "studentplace": false,
+    "student": "Barton Moran",
+    "rate": 5
+  },
+  {
+    "id": 546,
+    "guid": "350cd64a-c1f9-4f44-9e3d-22a4f44eff0a",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/10 22:10",
+    "studentplace": false,
+    "student": "Lucile Horne",
+    "rate": 0
+  },
+  {
+    "id": 99,
+    "guid": "98b1e11b-2afd-45ed-b42b-e234a8cac68a",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/10 13:45",
+    "studentplace": true,
+    "student": "Williamson Sparks",
+    "rate": 5
+  },
+  {
+    "id": 224,
+    "guid": "b2ad6b58-b4df-431e-a7a7-d1244c41a8e6",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/10 14:6",
+    "studentplace": false,
+    "student": "Brenda Kirby",
+    "rate": 2
+  },
+  {
+    "id": 719,
+    "guid": "6b3c0e64-1c6a-425e-80cf-7bd8befccf35",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/14 22:43",
+    "studentplace": true,
+    "student": "Sparks Everett",
+    "rate": 0
+  },
+  {
+    "id": 533,
+    "guid": "62fb4b2c-afb8-43cb-8df6-2150b3055d60",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/14 10:24",
+    "studentplace": true,
+    "student": "Lenore Boyd",
+    "rate": 2
+  },
+  {
+    "id": 726,
+    "guid": "5996c9bb-6bb9-4ca3-b811-8134d187b114",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/14 14:2",
+    "studentplace": false,
+    "student": "Traci Lee",
+    "rate": 0
+  },
+  {
+    "id": 228,
+    "guid": "c616d19f-f476-4edb-91ac-2829f64e2ee6",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/14 18:28",
+    "studentplace": true,
+    "student": "Sloan Walls",
+    "rate": 3
+  },
+  {
+    "id": 55,
+    "guid": "1c974b7f-2825-4fd2-853c-ba4bbb93ce0b",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/14 20:57",
+    "studentplace": true,
+    "student": "Sallie Craft",
+    "rate": 2
+  },
+  {
+    "id": 201,
+    "guid": "cac12770-254c-48a4-958f-84c811ba8727",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/14 16:5",
+    "studentplace": true,
+    "student": "Hines Mcbride",
+    "rate": 4
+  },
+  {
+    "id": 240,
+    "guid": "1e3ca8a5-886e-4fcd-ad3b-c2c684f811b5",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/14 14:34",
+    "studentplace": false,
+    "student": "Clayton Yang",
+    "rate": 5
+  },
+  {
+    "id": 814,
+    "guid": "be6311c2-dc9a-48e2-bcb7-632788f847d3",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/14 10:35",
+    "studentplace": true,
+    "student": "Rosalyn Chase",
+    "rate": 2
+  },
+  {
+    "id": 349,
+    "guid": "33da9a79-1698-4160-a3a1-4b9690e3ddfc",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/14 10:36",
+    "studentplace": true,
+    "student": "Pauline Giles",
+    "rate": 2
+  },
+  {
+    "id": 991,
+    "guid": "c16945c9-8574-4cc1-b2af-09d2212d1bfa",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/14 16:41",
+    "studentplace": true,
+    "student": "Kent Albert",
+    "rate": 5
+  },
+  {
+    "id": 629,
+    "guid": "9755cc6e-3fed-45f4-a5ac-f047479b5dcc",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/14 17:6",
+    "studentplace": false,
+    "student": "Hernandez Kidd",
+    "rate": 1
+  },
+  {
+    "id": 329,
+    "guid": "c29438db-9c6f-452a-ab86-25245d59944b",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/14 18:49",
+    "studentplace": true,
+    "student": "Paulette Hernandez",
+    "rate": 3
+  },
+  {
+    "id": 266,
+    "guid": "fd32fb97-a4ed-4c1c-bde0-49f7089d35ee",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/14 22:44",
+    "studentplace": false,
+    "student": "Petersen Aguilar",
+    "rate": 1
+  },
+  {
+    "id": 856,
+    "guid": "b7675295-61de-4853-9f62-ab89271c2289",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/14 13:42",
+    "studentplace": false,
+    "student": "Mildred Coffey",
+    "rate": 5
+  },
+  {
+    "id": 593,
+    "guid": "d01de257-968c-4490-8f64-08f537c519fc",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/14 16:40",
+    "studentplace": true,
+    "student": "Emma Marshall",
+    "rate": 1
+  },
+{
+    "id": 779,
+    "guid": "02474aa6-3c33-41ec-8469-0e4f6ab6533f",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 19:12",
+    "studentplace": false,
+    "student": "Myrtle Barrett",
+    "rate": 5
+  },
+  {
+    "id": 208,
+    "guid": "51fcce50-7ee9-44e3-9265-0242103568fb",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 14:31",
+    "studentplace": true,
+    "student": "Margie Tucker",
+    "rate": 4
+  },
+  {
+    "id": 787,
+    "guid": "c248c313-6c21-43dc-8032-d8e3c048c362",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 13:0",
+    "studentplace": false,
+    "student": "Tara Anderson",
+    "rate": 3
+  },
+  {
+    "id": 840,
+    "guid": "1b0ee0e0-b06c-4cc0-93bf-38ab9d5da5a3",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 14:4",
+    "studentplace": true,
+    "student": "Marlene Contreras",
+    "rate": 4
+  },
+  {
+    "id": 686,
+    "guid": "3b5c9b8d-e1ae-4550-af3c-54ada15a9d9d",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 18:1",
+    "studentplace": true,
+    "student": "Duran Middleton",
+    "rate": 0
+  },
+  {
+    "id": 400,
+    "guid": "3c58d4cf-a110-43d9-8643-1c3beb541d03",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 22:25",
+    "studentplace": true,
+    "student": "Justice Stokes",
+    "rate": 5
+  },
+  {
+    "id": 83,
+    "guid": "76453f6f-d6a9-40e4-a2e4-c5077a6e6695",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 11:48",
+    "studentplace": false,
+    "student": "Noreen Burch",
+    "rate": 0
+  },
+  {
+    "id": 637,
+    "guid": "33627c13-e926-425c-b62e-d1c2346d0732",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 11:18",
+    "studentplace": false,
+    "student": "Justine Woods",
+    "rate": 3
+  },
+  {
+    "id": 17,
+    "guid": "50e7d811-4747-4f62-b039-ecf2d8a9df4a",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 15:17",
+    "studentplace": true,
+    "student": "Katy Hill",
+    "rate": 2
+  },
+  {
+    "id": 678,
+    "guid": "1b73a5df-ef35-4390-94b0-d3cf9febad00",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 12:22",
+    "studentplace": false,
+    "student": "Melissa Salinas",
+    "rate": 5
+  },
+  {
+    "id": 912,
+    "guid": "f1bfa685-6942-4377-ae21-ddc10fa263b8",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 20:16",
+    "studentplace": false,
+    "student": "Sherman Kinney",
+    "rate": 0
+  },
+  {
+    "id": 794,
+    "guid": "b77ccffa-7bdc-4907-a3db-d7850d2e7f26",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 19:36",
+    "studentplace": false,
+    "student": "Flores Sims",
+    "rate": 2
+  },
+  {
+    "id": 617,
+    "guid": "2815879c-371d-4f72-8223-9d01ca4e1f89",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 17:56",
+    "studentplace": false,
+    "student": "Lea Leblanc",
+    "rate": 0
+  },
+  {
+    "id": 295,
+    "guid": "eab436eb-c9f2-4c20-859c-c9bf6abf491e",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 10:35",
+    "studentplace": true,
+    "student": "Kelly Copeland",
+    "rate": 0
+  },
+  {
+    "id": 581,
+    "guid": "bfd808ca-8d27-4b96-a2a0-1785416cd760",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 16:15",
+    "studentplace": false,
+    "student": "Peterson Robles",
+    "rate": 3
+  },
+  {
+    "id": 700,
+    "guid": "7083068f-41d2-42e2-a329-1a421545b82f",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 21:40",
+    "studentplace": true,
+    "student": "Jane Mcfarland",
+    "rate": 0
+  },
+  {
+    "id": 895,
+    "guid": "fb7ed0b7-149b-49c4-9160-7c327e871461",
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 20:9",
+    "studentplace": false,
+    "student": "Rosario Stewart",
+    "rate": 1
+  }
 ]
