@@ -12,3 +12,11 @@
     position: absolute;
     top: 0;
 }
+
+.day-chart{
+    cursor: pointer;
+}
+
+.popover-content{
+    font-size: small;
+}

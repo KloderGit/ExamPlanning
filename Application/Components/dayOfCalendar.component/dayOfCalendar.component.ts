@@ -25,6 +25,36 @@ export class DayOfCalendarComponent implements OnInit {
 		// fill: ["#bf4040", "#bfbf40", "#80bf40", "#40bf40", "#eeeeee" ],
 		});
 
+		$('.day-popover').popover({
+			'html':true,    
+    		content: `
+			<div class = "popover-content">
+			<p><strong>День</strong></p>
+			<ul>
+					<li>20% : Двоек</li>
+					<li>30% : Троек</li>
+					<li>15% : Четверок</li>
+					<li>25% : Пятерок</li>
+					<li>10% : Невыставлено</li>
+			</ul>
+					
+					<div class="dropdown">
+  <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+		</div>			
+					`
+		});
+
 	$(".donut-chart").peity("pie", {
 		radius: 30,
 		fill: ["#00bfff",  "#cccccc" ],
@@ -45,23 +75,28 @@ export class DayOfCalendarComponent implements OnInit {
 		return (this.countInvited().length + "/" + this.examens.length);
 	}
 
+	percentAccepted(){
+		let count = this.countOfRate("3") + this.countOfRate("4") + this.countOfRate("5");
+		return this.percentIn( count, this.countInvited().length );
+	}
+
 	isNeud(){
-		let count = this.percentOfRate("1") + this.percentOfRate("2");
+		let count = this.countOfRate("1") + this.countOfRate("2");
 		return this.percentIn( count, this.examens.length );
 	}
 
 	isThre(){
-		let count = this.percentOfRate("3");
+		let count = this.countOfRate("3");
 		return this.percentIn( count, this.examens.length );
 	}
 
 	isFour(){
-		let count = this.percentOfRate("4");
+		let count = this.countOfRate("4");
 		return this.percentIn( count, this.examens.length );
 	}
 
 	isFive(){
-		let count = this.percentOfRate("5");
+		let count = this.countOfRate("5");
 		return this.percentIn( count, this.examens.length );
 	}
 
@@ -70,8 +105,9 @@ export class DayOfCalendarComponent implements OnInit {
 		// return this.percentIn( count, this.examens.length );
 	}
 
-	percentOfRate( rate: string ){
-		return this.examens.filter( item => item.rate == rate ).length;
+	countOfRate( rate: string ){
+		return this.examens.filter( item => item.studentplace )
+			.filter( item => item.rate == rate ).length;
 	}
 
 	percentIn( x, y ){

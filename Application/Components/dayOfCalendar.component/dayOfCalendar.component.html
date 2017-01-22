@@ -1,13 +1,12 @@
 <!--<div class="dayOfCalendar">
     <span *ngFor="let examen of examens">{{examen.id}}</span>
 </div>-->
-
-<div *ngIf="examens.length" class="dayOfCalendar">
-{{percentInvite()}}%
-<div class="day-chart">
-  <span *ngIf="!isFuture()" class="pie-chart" >{{ isNeud() }},{{ isThre() }},{{ isFour() }},{{ isFive() }},{{ isNone() }}</span>
-  <span *ngIf="isFuture()" class="donut-chart" 
-        data-peity='{ "fill": ["green", "#eeeeee"],  "innerRadius": 22, "radius": 28 }'>{{invitedString()}}</span>
-</div>
-<!--<button (click) = "ddd()">ss</button>-->
-</div>
+<a class="day-popover" data-container="body" data-toggle="popover" data-placement="left">
+    <div *ngIf="examens.length" class="dayOfCalendar">
+        {{percentAccepted()}}%
+        <div class="day-chart">
+            <span *ngIf="!isFuture()" class="pie-chart">{{ isNeud() }},{{ isThre() }},{{ isFour() }},{{ isFive() }},{{ isNone() }}</span>
+            <span *ngIf="isFuture()" class="donut-chart" data-peity='{ "fill": ["green", "#eeeeee"],  "innerRadius": 22, "radius": 28 }'>{{invitedString()}}</span>
+        </div>
+    </div>
+</a>

@@ -22,9 +22,9 @@
     "guid": "c4b67ca4-f51d-4a29-a740-49cba471ec28",
     "disciplineId": "disc-111",
     "startTime": "2017/1/10 19:30",
-    "studentplace": false,
+    "studentplace": true,
     "student": "Thomas Winters",
-    "rate": 0
+    "rate": 5
   },
   {
     "id": 67,
@@ -418,7 +418,7 @@
     "guid": "bfd808ca-8d27-4b96-a2a0-1785416cd760",
     "disciplineId": "disc-111",
     "startTime": "2017/1/31 16:15",
-    "studentplace": false,
+    "studentplace": true,
     "student": "Peterson Robles",
     "rate": 3
   },
@@ -429,7 +429,7 @@
     "startTime": "2017/1/31 21:40",
     "studentplace": true,
     "student": "Jane Mcfarland",
-    "rate": 0
+    "rate": 5
   },
   {
     "id": 895,
