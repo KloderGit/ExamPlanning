@@ -1,5 +1,5 @@
 import { ExamenModel } from './../../Models/examen.model';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 
 declare var $:any;
 
@@ -12,53 +12,40 @@ declare var $:any;
 
 export class DayOfCalendarComponent implements OnInit {
 	@Input() examens: ExamenModel[];
+	@ViewChild("popoverTag") popoverTag: ElementRef;
 
 	ngOnInit() {
-		$(".pie-chart").peity("donut", {
+
+		// console.log(this.popoverTag, this.donutChart , this.pieChart);
+
+		$(".donut-chart").peity("donut", {
 					radius: 30,
 					fill: function(_, i, all) {
 						let colors = [ "rgb(255, 92, 92)", "rgb(255, 173, 92)", "rgb(204, 255, 102)", "rgb(39, 235, 0)", "rgb(204, 204, 204)" ];
-						// var g = parseInt((i / all.length) * 255);
-						// return "rgb(255, " + g + "," + (g-10) + ")";
 						return colors[i];
 					}
-		// fill: ["#bf4040", "#bfbf40", "#80bf40", "#40bf40", "#eeeeee" ],
 		});
 
-		$('.day-popover').popover({
+		$(".pie-chart").peity("pie", {
+			radius: 30,
+			fill: ["#00bfff",  "#cccccc" ]
+		});
+
+		$(this.popoverTag.nativeElement).popover({
 			'html':true,    
     		content: `
 			<div class = "popover-content">
-			<p><strong>День</strong></p>
-			<ul>
-					<li>20% : Двоек</li>
-					<li>30% : Троек</li>
-					<li>15% : Четверок</li>
-					<li>25% : Пятерок</li>
-					<li>10% : Невыставлено</li>
-			</ul>
-					
-					<div class="dropdown">
-  <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Dropdown
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Another action</a></li>
-    <li><a href="#">Something else here</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="#">Separated link</a></li>
-  </ul>
-</div>
-		</div>			
-					`
+				<p><strong>День</strong></p>
+				<ul>
+					<li>` + this.isNeud() + `%: Неудовлетворительно</li>
+					<li>` + this.isThre() + `%: Удовлетворительно</li>
+					<li>` + this.isFour() + `%: Хорошо</li>
+					<li>` + this.isFive() + `%: Отлично</li>
+					<li>` + this.isNone() + `%: Пустых или Пропущенных</li>
+				</ul>
+			</div>
+		`
 		});
-
-	$(".donut-chart").peity("pie", {
-		radius: 30,
-		fill: ["#00bfff",  "#cccccc" ],
-		})
 	}
 
 	isFuture(){
