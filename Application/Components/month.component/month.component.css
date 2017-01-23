@@ -1,0 +1,9 @@
+.inMonth {
+    min-height: 60px;
+    min-width: 60px;
+}
+.outOfMonth {
+    color: #bbb;
+    min-height: 60px;
+    min-width: 60px;
+}

@@ -34,13 +34,13 @@ export class DataManager {
 
 //  Экзамены
 
-    getExamensFromService( disciplineId: string, month: number ){
-        this.service.getExamensForDiscipline( disciplineId, month )
+    getExamensFromService( disciplineId: string, year: number, month: number ){
+        this.service.getExamensForDiscipline( disciplineId, year, month )
                            .then( data => { 
                                for( let i=0; i< data.length; i++){
                                    this.examens.push(data[i]);
                                }                               
-                               console.log('DataManager: Получены экзамены из сервиса на месяц - ' + month, data) 
+                               console.log('DataManager: Получены экзамены из сервиса на месяц - ' + year + "/" + month) 
                             }
                      );
     }
@@ -51,7 +51,11 @@ export class DataManager {
 
     getExamensFromServiceAll( disciplineId: string ){
         this.service.getExamensForDisciplineAll( disciplineId )
-                           .then( data => { this.examens = data;                           
+                           .then( data => { 
+                               this.examens = [];
+                               for( let i=0; i< data.length; i++){
+                                   this.examens.push(data[i]);
+                               }                            
                                console.log('DataManager: Получены все экзамены из сервиса') 
                             }
                      );

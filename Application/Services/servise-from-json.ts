@@ -23,18 +23,19 @@ export class ServiseFromJson{
         );
     }
 
-    getExamensForDiscipline( disciplineId: string, month: number ){
+    getExamensForDiscipline( disciplineId: string, year: number, month: number ){
         return this.http.get('/Application/MockData/examens-mock-data.json')
         .toPromise()
         .then( ( res ) => { 
                let temp: ExamenModel[] = []; 
                let array = res.json();
                for (var i = 0; i < array.length; i++) {
-                    temp.push( new ExamenModel( array[i].id, array[i].startTime, array[i].endTime, array[i].disciplineId ) );
+                    temp.push( new ExamenModel( array[i].id, array[i].startTime, array[i].endTime, array[i].disciplineId,
+                    array[i].student, array[i].studentplace, array[i].rate ) );
                }
-
                console.log('Service: Сервис получил экзамены'); 
-               return temp.filter( item => item.disciplineId == disciplineId)
+               return temp.filter( item => item.disciplineId == disciplineId )
+                          .filter( item => new Date(item.startTime).getFullYear() == year )
                           .filter( item => new Date(item.startTime).getMonth() == month );
             }
         );        

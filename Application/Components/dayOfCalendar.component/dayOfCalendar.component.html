@@ -1,0 +1,23 @@
+<div *ngIf="examens.length" class="dayOfCalendar">
+    <!--percentInvite() - Сколько экзменов занято-->
+    <span *ngIf="isFuture()">{{ percentInvite() }}%</span>
+    <!--percentAccepted() - Сколько экзаменов сдано на 3\4\5-->
+    <span *ngIf="!isFuture()">{{ percentAccepted() }}%</span>
+
+    
+    <a  #popoverTag 
+        class="day-popover" 
+        data-container="body" 
+        data-toggle="popover" 
+        data-placement="left">
+            <!--Данные в span для бублика должны быть без пробелов и переносов (четко между тэгом span)-->
+            <span   #donutChart 
+                    *ngIf="!isFuture()" 
+                    class="donut-chart">{{ isNeud() }},{{ isThre() }},{{ isFour() }},{{ isFive() }},{{ isNone() }}</span>
+            <!--Данные в span должны быть без пробелов и переносов (четко между тэгом span)-->
+            <span   #pieChart
+                    *ngIf="isFuture()"
+                    class="pie-chart"
+                    data-peity='{ "innerRadius": 22, "radius": 28 }'>{{ invitedString() }}</span>
+    </a>
+</div>
