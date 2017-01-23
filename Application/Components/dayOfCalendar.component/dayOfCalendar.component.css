@@ -8,15 +8,9 @@
     font-size: small;
 }
 
-.dayOfCalendar > .day-chart{
+.dayOfCalendar > .day-popover{
+    display: block;
     position: absolute;
     top: 0;
-}
-
-.day-chart{
     cursor: pointer;
-}
-
-.popover-content{
-    font-size: small;
 }

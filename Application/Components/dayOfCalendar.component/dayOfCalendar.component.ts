@@ -38,24 +38,23 @@ export class DayOfCalendarComponent implements OnInit, AfterViewInit {
 		}
 
 		let popupString: string;
-
 		if ( this.isFuture() ){
 			popupString = `
-			<div class = "popover-content">
-				<p><strong>День</strong></p>
-				<p>Записано:` + this.countInvited().length + `</p>
+			<div class = "content-of-popover">
+				<p><strong>Всего эзаменов: ` + this.examens.length +`</strong></p>
+				<p>Занято - ` + this.countInvited().length + ` (<strong>` + this.percentInvite() + `%</strong>)</p>
 			</div>
 			`;
 		} else {
  			popupString = `
-			<div class = "popover-content">
-				<p><strong>День</strong></p>
-				<ul>
-					<li>` + this.isNeud() + `%: Неудовлетворительно</li>
-					<li>` + this.isThre() + `%: Удовлетворительно</li>
-					<li>` + this.isFour() + `%: Хорошо</li>
-					<li>` + this.isFive() + `%: Отлично</li>
-					<li>` + this.isNone() + `%: Пустых или Пропущенных</li>
+			<div class = "content-of-popover">
+				<p><strong>` + this.percentAccepted() +`% - успешно сданы</strong></p>
+				<ul style="list-style-position: inside">
+					<li>` + ( this.isNeud() > 0? this.isNeud() : 0 ) + `%: Неудовлетв.</li>
+					<li>` + ( this.isThre() > 0? this.isThre() : 0 ) + `%: Удовлетв.</li>
+					<li>` + ( this.isFour() > 0? this.isFour() : 0 ) + `%: Хорошо</li>
+					<li>` + ( this.isFive() > 0? this.isFive() : 0 ) + `%: Отлично</li>
+					<li>` + ( this.isNone() > 0? this.isNone() : 0 ) + `%: Нет оценки</li>
 				</ul>
 			</div>
 			`;
@@ -66,9 +65,6 @@ export class DayOfCalendarComponent implements OnInit, AfterViewInit {
     		content: popupString
 		});
 	}
-
-
-
 
 	isFuture(){
 		return +this.examens[0].startTime > +new Date();
@@ -81,7 +77,7 @@ export class DayOfCalendarComponent implements OnInit, AfterViewInit {
 		return this.percentIn( this.countInvited().length, this.examens.length)
 	}
 	invitedString(){
-		return (this.countInvited().length + "/" + this.examens.length);
+		return (this.percentInvite() + "/100");
 	}
 
 	percentAccepted(){
