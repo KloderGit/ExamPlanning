@@ -43,13 +43,25 @@ export class DayOfCalendarComponent implements OnInit, AfterViewInit {
 			<div class = "content-of-popover">
 				<p><strong>Всего эзаменов: ` + this.examens.length +`</strong></p>
 				<p>Занято - ` + this.countInvited().length + ` (<strong>` + this.percentInvite() + `%</strong>)</p>
+				<div class="dropup">
+				<button class="btn btn-info btn-sm btn-block dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Действия
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+					<li><a href="#">Перенос</a></li>
+					<li><a href="#">Копировать</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="#">Редактировать</a></li>
+				</ul>
+				</div>				
 			</div>
 			`;
 		} else {
  			popupString = `
 			<div class = "content-of-popover">
 				<p><strong>` + this.percentAccepted() +`% - успешно сданы</strong></p>
-				<ul style="list-style-position: inside">
+				<ul class="legend-popover">
 					<li>` + ( this.isNeud() > 0? this.isNeud() : 0 ) + `%: Неудовлетв.</li>
 					<li>` + ( this.isThre() > 0? this.isThre() : 0 ) + `%: Удовлетв.</li>
 					<li>` + ( this.isFour() > 0? this.isFour() : 0 ) + `%: Хорошо</li>
