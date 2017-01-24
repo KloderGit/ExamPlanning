@@ -43,8 +43,7 @@
                 <div class="tab-content">
                     
                     <div class="tab-pane jumbotron active" role="tabpanel" id="step1">
-                        <h3>Шаг первый</h3>
-                        <p>Выберете тип экзамена:</p>
+                        <h3>Шаг первый. Выберете тип экзамена.</h3>
                         <div class="row well well-lg" style="text-align: center">
                             <div class="col-sm-6">
                                 <label for="personalType" style="display: inherit; cursor: pointer">
@@ -70,24 +69,60 @@
                             </div>
                     </div>
 
-                    <input id="personalType" type="radio" name="selectType">
-                    <input id="collectiveType" type="radio" name="selectType">
+                    <input id="personalType" type="radio" name="selectType" (change) = "changeExamenType('personal')">
+                    <input id="collectiveType" type="radio" name="selectType" (change) = "changeExamenType('collective')">
 
 
-                        <ul class="list-inline pull-right">
-                            <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                        <ul class="list-inline pull-right" [hidden] = "!formState.type.isSet">
+                            <li><button type="button" class="btn btn-primary next-step">Далее</button></li>
                         </ul>
                     </div>
                     
                     <div class="tab-pane jumbotron" role="tabpanel" id="step2">
-                        <h3>Шаг второй 2</h3>
-                        <p>Укажите время проведения:</p>
+                        <h3>Шаг второй 2. Укажите время проведения.</h3>
 
-
+                        <div class="row well well-lg" style="text-align: center">
+                            <div class="col-sm-4">
+                                    <div class="thumbnail">
+                                        <div class="caption">
+                                            <p>Начало экзамена:</p>
+                                            <input type="text" id="selectMonts" class="datepicker-here form-control" 
+                                                    data-min-view="months" data-view="months" data-date-format="MM yyyy"
+                                                    placeholder="Загрузить на выбор..." />                                            
+                                            <p style="font-size: small"><br/>
+                                                Дата уже выбрана. Вы можете заменить ее. Незабудьте указать время.
+                                            </p>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="col-sm-4">
+                                    <div class="thumbnail">
+                                        <div class="caption">
+                                            <p>Окончание экзамена</p>
+                                            <input type="text" id="selectMonts" class="datepicker-here form-control" 
+                                                    data-min-view="months" data-view="months" data-date-format="MM yyyy"
+                                                    placeholder="Загрузить на выбор..." />                                            
+                                            <p style="font-size: small"><br/>
+                                                Дата уже выбрана. Вы можете заменить ее. Незабудьте указать время.
+                                            </p>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="col-sm-4">
+                                    <div class="thumbnail">
+                                        <div class="caption">
+                                            <p>Результат</p>                                          
+                                            <p style="font-size: small">
+                                                Экзамены выбраны
+                                            </p>
+                                        </div>
+                                    </div>
+                            </div>
+                            </div>
 
                         <ul class="list-inline pull-right">
-                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                            <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                            <li><button type="button" class="btn btn-default prev-step">Назад</button></li>
+                            <li><button type="button" class="btn btn-primary next-step">Далее</button></li>
                         </ul>
                     </div>
                     
@@ -95,9 +130,9 @@
                         <h3>Шаг 3</h3>
                         <p>Количество</p>
                         <ul class="list-inline pull-right">
-                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                            <li><button type="button" class="btn btn-default next-step">Skip</button></li>
-                            <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
+                            <li><button type="button" class="btn btn-default prev-step">Назад</button></li>
+                            <li><button type="button" class="btn btn-default next-step">Пропустить</button></li>
+                            <li><button type="button" class="btn btn-primary btn-info-full next-step">Далее</button></li>
                         </ul>
                     </div>
                     

@@ -15,6 +15,10 @@ export class AddExamensComponent implements OnInit {
 
 	date: Date = new Date();
 
+	formState = {
+		type: { isSet: false, value: '' }
+	}
+
 	constructor( private route: ActivatedRoute,
 				 private dataManager: DataManager){
 		console.log("Создан компонент создания экзаменов");
@@ -47,5 +51,10 @@ export class AddExamensComponent implements OnInit {
 				$($active).prev().find('a[data-toggle="tab"]').click();
 			});
 	};
+
+	changeExamenType( type: string ){
+		this.formState.type = { isSet: true, value: type }
+		console.log( type );
+	}
 	
 }
