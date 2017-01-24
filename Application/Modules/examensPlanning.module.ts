@@ -1,3 +1,4 @@
+import { AirDataPickerInitDirective } from './../Directives/air-datapicker.directive';
 import { AddExamensComponent } from './../Components/add-examens.component/add-examens.component';
 import { DataManager } from './../Common/DataManager/data-manager';
 
@@ -11,6 +12,6 @@ export const routerConfig = [{
 
 @NgModule({
     imports: [CommonModule, RouterModule.forChild(routerConfig)],
-    declarations: [ AddExamensComponent ]
+    declarations: [ AddExamensComponent, AirDataPickerInitDirective ]
 })
 export default class ExamensPlanningModule {}
