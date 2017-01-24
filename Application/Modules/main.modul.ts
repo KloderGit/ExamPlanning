@@ -14,6 +14,7 @@ import { DataManager } from './../Common/DataManager/data-manager';
 var routerMaps = RouterModule.forRoot([
     { path: 'disciplines', component: DisciplinesListComponent },
     { path: 'discipline/:id', loadChildren: 'Application/Modules/discipline.module' },
+    { path: 'addexamens/:date', loadChildren: 'Application/Modules/examensPlanning.module' },
     { path: '', component: DisciplinesListComponent },
     { path: '**', component: DisciplinesListComponent }
 ]);

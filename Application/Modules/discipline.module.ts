@@ -18,7 +18,6 @@ export const routerConfig = [{
 
 @NgModule({
     imports: [CommonModule, RouterModule.forChild(routerConfig)],
-    declarations: [ DisciplineComponent, MonthComponent, MonthFromExamensPipe, ExamensForMonthPipe, ExamensForDayPipe, DayOfCalendarComponent],
-    exports: [ DisciplineComponent ]
+    declarations: [ DisciplineComponent, MonthComponent, MonthFromExamensPipe, ExamensForMonthPipe, ExamensForDayPipe, DayOfCalendarComponent]
 })
 export default class HomeModule {}
