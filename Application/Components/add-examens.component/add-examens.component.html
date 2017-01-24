@@ -1,4 +1,4 @@
-<div class="container add-examens-wizard">
+<div class="add-examens-wizard">
 	<div class="row">
 		<section>
         <div class="wizard">
@@ -45,7 +45,34 @@
                     <div class="tab-pane jumbotron active" role="tabpanel" id="step1">
                         <h3>Шаг первый</h3>
                         <p>Выберете тип экзамена:</p>
-                        <a>Общий</a> <a>Персональный</a>
+                        <div class="row well well-lg" style="text-align: center">
+                            <div class="col-sm-6">
+                                <label for="personalType" style="display: inherit; cursor: pointer">
+                                    <div class="thumbnail">
+                                        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRg0MZWDI33eZMjtkz58wPA-6EhBtfzIsTAchiWVjgQwKKbyObA" width="150">
+                                        <div class="caption">
+                                            <p>Персональный</p>
+                                            <p style="font-size: small">Каждый студент сдает экзамен отдельно, в назначенное ему время.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="collectiveType" style="display: inherit; cursor: pointer">
+                                    <div class="thumbnail">
+                                        <img src="https://cdn2.iconfinder.com/data/icons/users-2/512/User_6-512.png" width="150">
+                                        <div class="caption">
+                                            <p>Коллективный</p>
+                                            <p style="font-size: small">Общий экзамен для группы студентов в аудитории. Одно время для всех.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                    </div>
+
+                    <input id="personalType" type="radio" name="selectType">
+                    <input id="collectiveType" type="radio" name="selectType">
+
 
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
