@@ -9,15 +9,15 @@
             Часы:
         </div>
         <div class="col-md-9 col-sm-12">
-            <slider [min]="0" [max]="23" [value] = "defaultHour" (change) = "changeHours($event)"></slider>
+            <slider [min]="0" [max]="23" [value] = "defaultHour" (onChangeSlider) = "changeHours($event)"></slider>
         </div>
     </div>
-    <div class="col-xs-12">
+    <div class="col-xs-12" *ngIf = "!onlyHours">
         <div class="col-md-3 col-sm-12">
             Минуты:
         </div>
         <div class="col-md-9 col-sm-12">
-            <slider [min]="0" [max]="59" [value] = "defaultMinute" (change) = "changeMinutes($event)"></slider>
+            <slider [min]="0" [max]="59" [value] = "defaultMinute" (onChangeSlider) = "changeMinutes($event)"></slider>
         </div>
     </div>
 </div>

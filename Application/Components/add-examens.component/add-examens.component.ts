@@ -13,10 +13,15 @@ declare var $:any;
 
 export class AddExamensComponent implements OnInit {
 
-	formState = {
-		date: new Date(),
-		type: { isSet: false, value: '' }
-	}
+	date: Date = new Date(); 	
+
+	formState: { 
+		type?: { 
+			isSet: boolean,
+			value: string
+		},
+		startTime?: Date,
+		endTime?: Date };
 
 	constructor( private route: ActivatedRoute,
 				 private dataManager: DataManager){
@@ -25,7 +30,15 @@ export class AddExamensComponent implements OnInit {
 
 	ngOnInit() {
 		let urlParam = this.route.snapshot.params['date'];
-		this.formState.date.setTime(urlParam);
+		this.date.setTime(urlParam);
+		this.date.setHours(0,0,0);
+
+		this.formState =
+		{
+			type: { isSet: false, value: ''},
+			startTime: new Date( this.date ),
+			endTime: new Date( this.date )
+		}
 
 		this.init_jquery();
 	}
@@ -53,7 +66,13 @@ export class AddExamensComponent implements OnInit {
 
 	changeExamenType( type: string ){
 		this.formState.type = { isSet: true, value: type }
-		console.log( type );
+	}
+
+	startTimeChange( value: any ){
+		this.formState.startTime.setHours( value.hours, value.minutes );
 	}
 	
+	endTimeChange( value: any ){
+		this.formState.endTime.setHours( value.hours, value.minutes );
+	}
 }

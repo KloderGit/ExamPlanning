@@ -88,7 +88,7 @@
                                     <div class="thumbnail">
                                         <div class="caption">
                                             <p>Начало экзамена:</p>
-<timepicker [defaultHour] = '10' [defaultMinute] = '0'></timepicker>
+<timepicker [defaultHour] = '10' [defaultMinute] = '0' [onlyHours] = "false" (onChangeTimePicker) = "startTimeChange($event)"></timepicker>
 
                                         </div>
                                     </div>
@@ -98,7 +98,7 @@
                                         <div class="caption">
                                             <p>Окончание экзамена</p>
 
-<timepicker [defaultHour] = '21' [defaultMinute] = '20'></timepicker>
+<timepicker [defaultHour] = '21' [defaultMinute] = '0' [onlyHours] = "false" (onChangeTimePicker) = "endTimeChange($event)"></timepicker>
 
                                         </div>
                                     </div>
@@ -107,9 +107,8 @@
                                     <div class="thumbnail">
                                         <div class="caption">
                                             <p>Результат</p>                                          
-                                            <p style="font-size: small">
-                                                Экзамены выбраны
-                                            </p>
+                                            <p style="font-size: small"> {{formState.startTime}} </p>
+                                            <p style="font-size: small"> {{formState.endTime}} </p>
                                         </div>
                                     </div>
                             </div>
@@ -149,3 +148,4 @@
 </div>
 
 
+<p>{{formState | json}}</p>
