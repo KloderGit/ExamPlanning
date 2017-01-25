@@ -9,7 +9,7 @@
             "sourceMaps": true,
             // "program": "C://Program Files (x86)//Google//Chrome//Application//chrome.exe --remote-debugging-port=9222 --user-data-dir=remote-profile",
             "webRoot": "${workspaceRoot}/Application",
-            "url": "http://localhost:3000/",
+            "url": "http://localhost:3000/*",
             "sourceMapPathOverrides": {
               "webpack:///*": "/*"
             }

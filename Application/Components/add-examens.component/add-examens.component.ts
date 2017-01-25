@@ -13,9 +13,8 @@ declare var $:any;
 
 export class AddExamensComponent implements OnInit {
 
-	date: Date = new Date();
-
 	formState = {
+		date: new Date(),
 		type: { isSet: false, value: '' }
 	}
 
@@ -25,8 +24,8 @@ export class AddExamensComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		let urlParam = this.route.snapshot.params['data'];
-		this.date.setTime(urlParam);
+		let urlParam = this.route.snapshot.params['date'];
+		this.formState.date.setTime(urlParam);
 
 		this.init_jquery();
 	}

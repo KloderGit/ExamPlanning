@@ -1,3 +1,5 @@
+<h3>{{formState.date}}</h3>
+
 <div class="add-examens-wizard">
 	<div class="row">
 		<section>
@@ -86,11 +88,8 @@
                                     <div class="thumbnail">
                                         <div class="caption">
                                             <p>Начало экзамена:</p>
-                                            <input air-datapicker-init type="text" class="datepicker-here form-control" 
-                                                    placeholder="Загрузить на выбор..." />                                            
-                                            <p style="font-size: small"><br/>
-                                                Дата уже выбрана. Вы можете заменить ее. Незабудьте указать время.
-                                            </p>
+<timepicker [defaultHour] = '10' [defaultMinute] = '0'></timepicker>
+
                                         </div>
                                     </div>
                             </div>
@@ -98,12 +97,9 @@
                                     <div class="thumbnail">
                                         <div class="caption">
                                             <p>Окончание экзамена</p>
-                                            <input type="text" id="selectMonts" class="datepicker-here form-control" 
-                                                    data-min-view="months" data-view="months" data-date-format="MM yyyy"
-                                                    placeholder="Загрузить на выбор..." />                                            
-                                            <p style="font-size: small"><br/>
-                                                Дата уже выбрана. Вы можете заменить ее. Незабудьте указать время.
-                                            </p>
+
+<timepicker [defaultHour] = '21' [defaultMinute] = '20'></timepicker>
+
                                         </div>
                                     </div>
                             </div>
@@ -128,6 +124,11 @@
                     <div class="tab-pane jumbotron" role="tabpanel" id="step3">
                         <h3>Шаг 3</h3>
                         <p>Количество</p>
+
+<input type="range"/>
+<slider></slider>
+
+                        
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default prev-step">Назад</button></li>
                             <li><button type="button" class="btn btn-default next-step">Пропустить</button></li>
@@ -146,3 +147,5 @@
     </section>
    </div>
 </div>
+
+
