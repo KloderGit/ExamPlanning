@@ -1,5 +1,5 @@
 import { ExamenModel } from './../../Models/examen.model';
-import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 
 declare var $:any;
 
@@ -10,7 +10,7 @@ declare var $:any;
 	styleUrls: ['dayOfCalendar.component.css']
 })
 
-export class DayOfCalendarComponent implements OnInit, AfterViewInit {
+export class DayOfCalendarComponent implements OnInit, AfterViewInit, OnDestroy {
 	@Input() examens: ExamenModel[];
 	@ViewChild("popoverTag") popoverTag: ElementRef;
 	@ViewChild("donutChart") donutChart: ElementRef;
@@ -129,6 +129,11 @@ export class DayOfCalendarComponent implements OnInit, AfterViewInit {
 
 	percentIn( x, y ){
 		return Math.floor( 100 / ( y / x ));
+	}
+
+
+	ngOnDestroy(){
+		$(this.popoverTag.nativeElement).popover('destroy');
 	}
 }
 

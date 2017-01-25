@@ -1,0 +1,23 @@
+<div class="wizard-select-time row" style="font-size: small">
+
+    <div class="col-xs-12">
+        <p>{{value.hours}} : {{value.minutes}}</p>
+    </div>
+
+    <div class="col-xs-12">
+        <div class="col-md-3 col-sm-12">
+            Часы:
+        </div>
+        <div class="col-md-9 col-sm-12">
+            <slider [min]="0" [max]="23" [value] = "defaultHour" (change) = "changeHours($event)"></slider>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="col-md-3 col-sm-12">
+            Минуты:
+        </div>
+        <div class="col-md-9 col-sm-12">
+            <slider [min]="0" [max]="59" [value] = "defaultMinute" (change) = "changeMinutes($event)"></slider>
+        </div>
+    </div>
+</div>

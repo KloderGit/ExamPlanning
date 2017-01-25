@@ -1,6 +1,7 @@
 import { MonthGrid } from './../../Models/Calendar/month-grid';
 import { ExamenModel } from './../../Models/examen.model';
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
 	moduleId: module.id,
@@ -14,7 +15,7 @@ export class MonthComponent implements OnInit {
 
 	grid: MonthGrid;
 
-	constructor(){
+	constructor( private router: Router ){
 	}
 
 	ngOnInit() {
@@ -26,6 +27,8 @@ export class MonthComponent implements OnInit {
         return str.charAt(0).toUpperCase() + str.slice(1);
     } 
 
-	
+	editDay( date: Date ){
+		this.router.navigate(['/addexamens', + date ]);
+	}
 
 }

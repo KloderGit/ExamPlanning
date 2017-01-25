@@ -1,0 +1,151 @@
+<h3>{{formState.date}}</h3>
+
+<div class="add-examens-wizard">
+	<div class="row">
+		<section>
+        <div class="wizard">
+            <div class="wizard-inner">
+                <div class="connecting-line"></div>
+                <ul class="nav nav-tabs" role="tablist">
+
+                    <li role="presentation" class="active">
+                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-folder-open"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="disabled">
+                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-picture"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <form role="form">
+                <div class="tab-content">
+                    
+                    <div class="tab-pane jumbotron active" role="tabpanel" id="step1">
+                        <h3>Шаг первый. Выберете тип экзамена.</h3>
+                        <div class="row well well-lg" style="text-align: center">
+                            <div class="col-sm-6">
+                                <label for="personalType" style="display: inherit; cursor: pointer">
+                                    <div class="thumbnail">
+                                        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRg0MZWDI33eZMjtkz58wPA-6EhBtfzIsTAchiWVjgQwKKbyObA" width="150">
+                                        <div class="caption">
+                                            <p>Персональный</p>
+                                            <p style="font-size: small">Каждый студент сдает экзамен отдельно, в назначенное ему время.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="collectiveType" style="display: inherit; cursor: pointer">
+                                    <div class="thumbnail">
+                                        <img src="https://cdn2.iconfinder.com/data/icons/users-2/512/User_6-512.png" width="150">
+                                        <div class="caption">
+                                            <p>Коллективный</p>
+                                            <p style="font-size: small">Общий экзамен для группы студентов в аудитории. Одно время для всех.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                    </div>
+
+                    <input id="personalType" type="radio" name="selectType" (change) = "changeExamenType('personal')">
+                    <input id="collectiveType" type="radio" name="selectType" (change) = "changeExamenType('collective')">
+
+
+                        <ul class="list-inline pull-right" [hidden] = "!formState.type.isSet">
+                            <li><button type="button" class="btn btn-primary next-step">Далее</button></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-pane jumbotron" role="tabpanel" id="step2">
+                        <h3>Шаг второй 2. Укажите время проведения.</h3>
+
+                        <div class="row well well-lg" style="text-align: center">
+                            <div class="col-sm-4">
+                                    <div class="thumbnail">
+                                        <div class="caption">
+                                            <p>Начало экзамена:</p>
+<timepicker [defaultHour] = '10' [defaultMinute] = '0'></timepicker>
+
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="col-sm-4">
+                                    <div class="thumbnail">
+                                        <div class="caption">
+                                            <p>Окончание экзамена</p>
+
+<timepicker [defaultHour] = '21' [defaultMinute] = '20'></timepicker>
+
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="col-sm-4">
+                                    <div class="thumbnail">
+                                        <div class="caption">
+                                            <p>Результат</p>                                          
+                                            <p style="font-size: small">
+                                                Экзамены выбраны
+                                            </p>
+                                        </div>
+                                    </div>
+                            </div>
+                            </div>
+
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Назад</button></li>
+                            <li><button type="button" class="btn btn-primary next-step">Далее</button></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-pane jumbotron" role="tabpanel" id="step3">
+                        <h3>Шаг 3</h3>
+                        <p>Количество</p>
+
+<input type="range"/>
+<slider></slider>
+
+                        
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Назад</button></li>
+                            <li><button type="button" class="btn btn-default next-step">Пропустить</button></li>
+                            <li><button type="button" class="btn btn-primary btn-info-full next-step">Далее</button></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-pane jumbotron" role="tabpanel" id="complete">
+                        <h3>Итог</h3>
+                        <p>Проверьте, все ли правильно, и сохраните результат.</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+        </div>
+    </section>
+   </div>
+</div>
+
+
