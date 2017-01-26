@@ -1,3 +1,10 @@
+.time-text{
+    font-size: 32pt;
+    font-stretch: condensed;
+    color: cornflowerblue;
+}
+
+
 input[type=range] {
   -webkit-appearance: none;
   width: 100%;

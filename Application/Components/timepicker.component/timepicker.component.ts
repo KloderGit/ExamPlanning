@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { addFirstZero } from './../../Common/function.common'
 
 @Component({
 	moduleId: module.id,
@@ -19,7 +20,6 @@ export class TimepickerComponent implements OnInit {
 	ngOnInit() {
 		this.value.hours = this.defaultHour;
 		this.value.minutes = this.defaultMinute;
-
 		this.onChangeTimePicker.emit( this.value );
 	}
 
@@ -31,5 +31,9 @@ export class TimepickerComponent implements OnInit {
 	changeMinutes( minutes: number ){
 			this.value.minutes = minutes;
 			this.onChangeTimePicker.emit( this.value );
+	}
+
+	formatTimeDigit(n){		
+		return addFirstZero( n );
 	}
 }

@@ -1,6 +1,7 @@
 import { DataManager } from './../../Common/DataManager/data-manager';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { addFirstZero } from './../../Common/function.common'
 
 declare var $:any;
 
@@ -21,7 +22,9 @@ export class AddExamensComponent implements OnInit {
 			value: string
 		},
 		startTime?: Date,
-		endTime?: Date };
+		endTime?: Date,
+		studentCount?: number
+ 	};
 
 	constructor( private route: ActivatedRoute,
 				 private dataManager: DataManager){
@@ -74,5 +77,18 @@ export class AddExamensComponent implements OnInit {
 	
 	endTimeChange( value: any ){
 		this.formState.endTime.setHours( value.hours, value.minutes );
+	}
+
+	changeStudentCount( value: number ){
+		this.formState.studentCount = value;
+	}
+
+	diffTime(){
+		let diff = ( +this.formState.endTime - +this.formState.startTime );
+		return diff;
+	}
+
+	formatTimeDigit(n){		
+		return addFirstZero( n );
 	}
 }
