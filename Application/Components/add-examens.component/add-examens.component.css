@@ -1,3 +1,15 @@
+.add-examens-wizard .wizard .jumbotron{
+    margin: 0;
+}
+
+.add-examens-wizard .wizard .list-group{
+    margin-bottom: 0;
+}
+
+.add-examens-wizard .wizard .deactive{
+    background-color: inherit;
+}
+
 .add-examens-wizard .wizard {
     margin: 20px auto;
     background: #fff;
@@ -7,7 +19,7 @@
         position: relative;
         margin: 40px auto;
         margin-bottom: 0;
-        border-bottom-color: #e0e0e0;
+        border-bottom-color: #5bc0de;
     }
 
     .add-examens-wizard .wizard > div.wizard-inner {
@@ -105,7 +117,7 @@
 
 .add-examens-wizard .wizard .tab-pane {
     position: relative;
-    padding-top: 50px;
+    /*padding-top: 50px;*/
 }
 
 .add-examens-wizard .wizard h3 {

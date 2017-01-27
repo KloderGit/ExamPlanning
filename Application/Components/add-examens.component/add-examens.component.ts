@@ -14,7 +14,12 @@ declare var $:any;
 
 export class AddExamensComponent implements OnInit {
 
-	date: Date = new Date(); 	
+	date: Date = new Date();
+
+	divided: { startTime: Date, endTime: Date, isSelected: boolean }[] = [];
+
+	divideBy: number = 10;
+	divideByCheck: boolean = false;
 
 	formState: { 
 		type?: { 
@@ -68,7 +73,8 @@ export class AddExamensComponent implements OnInit {
 	};
 
 	changeExamenType( type: string ){
-		this.formState.type = { isSet: true, value: type }
+		this.formState.type = { isSet: true, value: type };
+		this.divided = [];
 	}
 
 	startTimeChange( value: any ){
@@ -90,5 +96,52 @@ export class AddExamensComponent implements OnInit {
 
 	formatTimeDigit(n){		
 		return addFirstZero( n );
+	}
+
+	addExamen(){
+		console.log( this.formState );
+	}
+
+
+	changeDivideByButton( value: any ){
+		value = parseInt(value);
+		this.divideBy = value;
+		this.dividePeriod();
+	}
+	changeDivideByInput( value: any ){
+		value = parseInt(value);
+		if( value < 5) { return }
+		this.divideBy = value;
+		this.dividePeriod();		
+	}
+	changeDivideByCheckBox( value: any ){
+		this.divideByCheck = value;
+		this.dividePeriod();		
+	}
+
+	dividePeriod(){
+		let n = this.divideBy;
+		let h = this.divideByCheck;
+		this.divided = [];
+		let count: number;
+		let mod = (this.diffTime() / 1000 / 60) % n;
+
+		if ( mod > 0 && h ){
+			count = Math.floor( (this.diffTime() / 1000 / 60) / n ) + 1;
+		} else {
+			count = Math.floor( (this.diffTime() / 1000 / 60) / n );
+		}
+
+		let index = 0;
+		let stT = this.formState.startTime;
+
+		for(let i=0; i < count; i++){
+			let tm = new Date(stT);			
+			tm.setMinutes(index);
+			let mt = new Date(stT);
+			mt.setMinutes(index+n);
+			this.divided[i] = { startTime: tm, endTime: mt, isSelected: true };
+			index +=n;
+		}
 	}
 }

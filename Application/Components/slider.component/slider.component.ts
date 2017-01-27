@@ -16,7 +16,7 @@ export class SliderComponent implements OnInit {
 	@Input() min: number = 0;
 	@Input() max: number = 100;
 
-	@Input() value: number = 10;
+	@Input() value: string = '10';
 
 	@Output() onChangeSlider = new EventEmitter();
 
@@ -26,5 +26,7 @@ export class SliderComponent implements OnInit {
 		this.slider.nativeElement.addEventListener("input", function() {
 			context.onChangeSlider.emit( parseInt(this.value) );
 		}, false);
+
+		this.onChangeSlider.emit( parseInt(this.value) );
 	}
 }
