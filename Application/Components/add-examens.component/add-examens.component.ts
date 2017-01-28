@@ -79,10 +79,12 @@ export class AddExamensComponent implements OnInit {
 
 	startTimeChange( value: any ){
 		this.formState.startTime.setHours( value.hours, value.minutes );
+		this.divided = [];
 	}
 	
 	endTimeChange( value: any ){
 		this.formState.endTime.setHours( value.hours, value.minutes );
+		this.divided = [];
 	}
 
 	changeStudentCount( value: number ){
