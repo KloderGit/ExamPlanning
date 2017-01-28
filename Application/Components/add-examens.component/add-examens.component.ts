@@ -1,6 +1,6 @@
 import { DataManager } from './../../Common/DataManager/data-manager';
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { addFirstZero } from './../../Common/function.common'
 
 declare var $:any;
@@ -15,6 +15,8 @@ declare var $:any;
 export class AddExamensComponent implements OnInit {
 
 	date: Date = new Date();
+
+	@ViewChild('endTimePicker') endTimePicker: HTMLElement;
 
 	divided: { startTime: Date, endTime: Date, isSelected: boolean }[] = [];
 
@@ -79,6 +81,9 @@ export class AddExamensComponent implements OnInit {
 
 	startTimeChange( value: any ){
 		this.formState.startTime.setHours( value.hours, value.minutes );
+		if ( this.formState.endTime.getHours() < this.formState.startTime.getHours() ){
+			// this.endTimePicker.attributes.value = { hours: 10, minutes: 0 };
+		}
 		this.divided = [];
 	}
 	

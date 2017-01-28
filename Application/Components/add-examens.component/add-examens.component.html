@@ -80,7 +80,11 @@
                                     <div class="thumbnail">
                                         <div class="caption">
                                             <p>Начало экзаменов:</p>
-                                            <timepicker [defaultHour]='17' [defaultMinute]='0' [onlyHours]="true" (onChangeTimePicker)="startTimeChange($event)"></timepicker>
+                                            <timepicker [defaultHour]='17' 
+                                                        [defaultMinute]='0' 
+                                                        [onlyHours]="true" 
+                                                        (onChangeTimePicker)="startTimeChange($event)">
+                                            </timepicker>
                                         </div>
                                     </div>
                                 </div>
@@ -88,7 +92,13 @@
                                     <div class="thumbnail">
                                         <div class="caption">
                                             <p>Окончание экзаменов</p>
-                                            <timepicker [defaultHour]='22' [defaultMinute]='0' [onlyHours]="true" (onChangeTimePicker)="endTimeChange($event)"></timepicker>
+                                            <timepicker #endTimePicker
+                                                        [defaultHour]='22' 
+                                                        [defaultMinute]='0' 
+                                                        [onlyHours]="true" 
+                                                        [hourMinLimit] = 'formState.startTime.getHours()'
+                                                        (onChangeTimePicker)="endTimeChange($event)">
+                                            </timepicker>
                                         </div>
                                     </div>
                                 </div>

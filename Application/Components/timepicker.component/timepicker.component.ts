@@ -10,12 +10,21 @@ import { addFirstZero } from './../../Common/function.common'
 
 export class TimepickerComponent implements OnInit {
 
-	value: { hours: number, minutes: number } = { hours: undefined, minutes: undefined };
+	@Input() value: { hours: number, minutes: number } = { hours: undefined, minutes: undefined };
 
  	@Input() defaultHour: number = 10;
 	@Input() defaultMinute: number = 0;
 	@Input() onlyHours: boolean = false;
 	@Output() onChangeTimePicker = new EventEmitter<Object>();
+
+	minSliderHours: number = 0; 
+	maxSliderHours: number = 23;
+	minSliderMinutes: number = 0; 
+	maxSliderMinutes: number = 59;
+	@Input() hourMinLimit: number = this.minSliderHours;
+	@Input() hourMaxLimit: number = this.maxSliderHours;
+	@Input() minutesMinLimit: number = this.minSliderMinutes;
+	@Input() minutesMaxLimit: number = this.maxSliderMinutes;	
 
 	ngOnInit() {
 		this.value.hours = this.defaultHour;
