@@ -15,8 +15,10 @@ export class SliderComponent implements OnInit {
 
 	@Input() min: number = 0;
 	@Input() max: number = 100;
-
 	@Input() value: string = '10';
+
+	@Input() minLimit: number = this.min;
+	@Input() maxLimit: number = this.max;
 
 	@Output() onChangeSlider = new EventEmitter();
 
@@ -24,6 +26,10 @@ export class SliderComponent implements OnInit {
 		let context = this;
 
 		this.slider.nativeElement.addEventListener("input", function() {
+			if ( this.value < context.minLimit ){
+				this.value = context.value;
+			}
+			context.value = this.value;
 			context.onChangeSlider.emit( parseInt(this.value) );
 		}, false);
 

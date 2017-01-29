@@ -61,4 +61,24 @@ export class DataManager {
                      );
     }
 
+    addExamen( inObject: any ){
+
+        for (let i=0; i<inObject.length; i++){
+            let ex = new ExamenModel();
+            ex.id = "new"
+            ex.disciplineId = "disc-111";
+            ex.guid = "c4b67ca4-f51d-4a29-a740-49cba471ec28";
+            ex.startTime = inObject[i].startTime;
+            ex.endTime = inObject[i].endTime;
+            ex.student = undefined;
+            ex.studentplace = false;
+            ex.rate = "0";
+
+            this.examens.push(ex);
+                    console.log(ex);
+
+        }
+
+    }
+
 }

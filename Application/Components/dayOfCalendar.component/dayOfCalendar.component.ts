@@ -94,7 +94,11 @@ export class DayOfCalendarComponent implements OnInit, AfterViewInit, OnDestroy 
 
 	percentAccepted(){
 		let count = this.countOfRate("3") + this.countOfRate("4") + this.countOfRate("5");
-		return this.percentIn( count, this.countInvited().length );
+		if ( count == 0 ){
+			return 0;
+		} else {
+			return this.percentIn( count, this.countInvited().length );
+		}		
 	}
 
 	isNeud(){
