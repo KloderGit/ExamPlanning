@@ -223,16 +223,34 @@
                     </div>
                     <div class="tab-pane" role="tabpanel" id="complete">
                         <div class="jumbotron">
-                            <h3>Проверьте, все ли правильно, и сохраните результат.</h3>
+                            <h3>Шаг четвертый. Проверьте, все ли правильно, и сохраните результат.</h3>
                         </div>
                         <div class="col-xs-12 well well-lg" style="text-align: center">
-                            <div class="col-md-8 col-xs-12">
+
+                            <div class="col-md-8 col-xs-12"  *ngIf = "formState.type.value == 'collective'" >
                                 <div class="thumbnail">
                                     <div class="caption">
                                         <p>Будет создан экзамен:</p>
+                                        <p>Начало: {{formState.startTime.getHours()}}:{{formatTimeDigit(formState.startTime.getMinutes())}}</p>
+                                        <p>Окончание: {{formState.endTime.getHours()}}:{{formatTimeDigit(formState.endTime.getMinutes())}}</p>
+                                        <br/>
+                                        <p>Студентов: {{formState.studentCount}}</p>
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="col-md-8 col-xs-12"  *ngIf = "formState.type.value == 'personal'" >
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <p>Будут созданы экзамены:</p>
+                                        <p>Начало: {{formState.startTime.getHours()}}:{{formatTimeDigit(formState.startTime.getMinutes())}}</p>
+                                        <p>Окончание: {{formState.endTime.getHours()}}:{{formatTimeDigit(formState.endTime.getMinutes())}}</p>
+                                        <br/>
+                                        <p>Студентов: {{resultPersonalCount().length}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="col-md-4 col-xs-12">
                                 <div class="thumbnail">
                                     <div class="caption">

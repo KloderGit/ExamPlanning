@@ -17,7 +17,7 @@ export class TimepickerComponent implements OnInit {
 	@Input() onlyHours: boolean = false;
 	@Output() onChangeTimePicker = new EventEmitter<Object>();
 
-	minSliderHours: number = 0; 
+	minSliderHours: number = 9; 
 	maxSliderHours: number = 23;
 	minSliderMinutes: number = 0; 
 	maxSliderMinutes: number = 59;
