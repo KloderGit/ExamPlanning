@@ -1,3 +1,4 @@
+import { TimepickerComponent } from './../timepicker.component/timepicker.component';
 import { DataManager } from './../../Common/DataManager/data-manager';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
@@ -16,9 +17,7 @@ export class AddExamensComponent implements OnInit {
 
 	date: Date = new Date();
 
-	@ViewChild('endTimePicker') endTimePicker: HTMLElement;
-
-	divided: { startTime: Date, endTime: Date, isSelected: boolean }[] = [];
+	divided: { startTime: Date, endTime: Date, isSelected: boolean, countPlace: number }[] = [];
 
 	divideBy: number = 10;
 	divideByCheck: boolean = false;
@@ -30,7 +29,8 @@ export class AddExamensComponent implements OnInit {
 		},
 		startTime?: Date,
 		endTime?: Date,
-		studentCount?: number
+		studentCount?: number,
+		stydentArray: { startTime: Date, endTime: Date }[]
  	};
 
 	constructor( private route: ActivatedRoute,
@@ -47,7 +47,8 @@ export class AddExamensComponent implements OnInit {
 		{
 			type: { isSet: false, value: ''},
 			startTime: new Date( this.date ),
-			endTime: new Date( this.date )
+			endTime: new Date( this.date ),
+			stydentArray: new Array()
 		}
 
 		this.init_jquery();
@@ -81,9 +82,6 @@ export class AddExamensComponent implements OnInit {
 
 	startTimeChange( value: any ){
 		this.formState.startTime.setHours( value.hours, value.minutes );
-		if ( this.formState.endTime.getHours() < this.formState.startTime.getHours() ){
-			// this.endTimePicker.attributes.value = { hours: 10, minutes: 0 };
-		}
 		this.divided = [];
 	}
 	
@@ -106,9 +104,23 @@ export class AddExamensComponent implements OnInit {
 	}
 
 	addExamen(){
-		console.log( this.formState );
+
+		if ( this.formState.type.value == 'personal'){
+			this.dataManager.addExamen( this.divided.filter( item => item.isSelected) );
+		} 
+
+		if ( this.formState.type.value == 'collective'){
+			let result = [
+				{ startTime: this.formState.startTime, endTime: this.formState.endTime, countPlace: this.formState.studentCount }
+			];
+			this.dataManager.addExamen( result );		
+		}
+		
 	}
 
+	resultPersonalCount(){
+		return this.divided.filter( item => item.isSelected );
+	}
 
 	changeDivideByButton( value: any ){
 		value = parseInt(value);
@@ -147,7 +159,7 @@ export class AddExamensComponent implements OnInit {
 			tm.setMinutes(index);
 			let mt = new Date(stT);
 			mt.setMinutes(index+n);
-			this.divided[i] = { startTime: tm, endTime: mt, isSelected: true };
+			this.divided[i] = { startTime: tm, endTime: mt, isSelected: true, countPlace: 1 };
 			index +=n;
 		}
 	}
