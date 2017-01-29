@@ -1,25 +1,28 @@
 
 export class ExamenModel{
 
-    id: string;
-    guid: string;
+    id: number;
     disciplineId: string;
     startTime: Date;
     endTime: Date;
 
-    studentplace: boolean;
-    student?: string;
-    rate?: string;
+    intervals: boolean;
+    studentLimit: number;
+    students: string[];
 
-
-    constructor( id?: string, startTime?: string, endtTime?: string, disciplineId?: string, 
-    student?: string, studentplace?: boolean, rate?: string ){
+    constructor(    startTime: string | Date, 
+                    endTime: string | Date,
+                    disciplineId: string, 
+                    intervals: boolean,
+                    studentLimit?: number,
+                    students?: string[],
+                    id?: number ){
         this.id = id;
-        this.startTime = new Date (startTime);
-        this.endTime = new Date (endtTime);
+        if (typeof startTime == "string") { this.startTime = new Date (startTime); } else { this.startTime = startTime; }
+        if (typeof endTime == "string") { this.endTime = new Date (endTime); } else { this.endTime = endTime; }
         this.disciplineId = disciplineId;
-        this.student = student;
-        this.studentplace = studentplace;
-        this.rate = rate;
+        this.intervals = intervals;
+        this.studentLimit = studentLimit
+        this.students = students;
     }
 }

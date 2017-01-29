@@ -24,7 +24,7 @@ export class ServiseFromJson{
     }
 
     getExamensForDiscipline( disciplineId: string, year: number, month: number ){
-        return this.http.get('/Application/MockData/examens-mock-data.json')
+        return this.http.get('/Application/MockData/examens-mock-data2.json')
         .toPromise()
         .then( ( res ) => { 
                let temp: ExamenModel[] = []; 
@@ -32,6 +32,7 @@ export class ServiseFromJson{
                for (var i = 0; i < array.length; i++) {
                     temp.push( new ExamenModel( array[i].id, array[i].startTime, array[i].endTime, array[i].disciplineId,
                     array[i].student, array[i].studentplace, array[i].rate ) );
+                    let clientWithType = Object.assign(new ExamenModel(), array[i])
                }
                console.log('Service: Сервис получил экзамены'); 
                return temp.filter( item => item.disciplineId == disciplineId )

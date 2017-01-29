@@ -1,0 +1,661 @@
+[
+  {
+    "id": 200,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/22 10:49",
+    "endTime": "2017/1/22 10:49",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 961,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/22 19:33",
+    "endTime": "2017/1/22 19:33",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 93,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/22 11:20",
+    "endTime": "2017/1/22 11:20",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 165,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/22 19:34",
+    "endTime": "2017/1/22 19:34",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 312,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/22 18:27",
+    "endTime": "2017/1/22 18:27",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 770,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/22 12:53",
+    "endTime": "2017/1/22 12:53",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Fran Johns"
+    ]
+  },
+  {
+    "id": 638,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/22 21:24",
+    "endTime": "2017/1/22 21:24",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 265,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/22 17:48",
+    "endTime": "2017/1/22 17:48",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Mindy Howard"
+    ]
+  },
+  {
+    "id": 75,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/22 15:55",
+    "endTime": "2017/1/22 15:55",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Emilia Harper"
+    ]
+  },
+  {
+    "id": 612,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/22 21:26",
+    "endTime": "2017/1/22 21:26",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Maddox Newton"
+    ]
+  },
+  {
+    "id": 748,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/22 21:0",
+    "endTime": "2017/1/22 21:0",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Jimenez Gardner"
+    ]
+  },
+  {
+    "id": 773,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/22 22:58",
+    "endTime": "2017/1/22 22:58",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Bettye Meyer"
+    ]
+  },
+  {
+    "id": 116,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/22 11:24",
+    "endTime": "2017/1/22 11:24",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 804,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/22 22:50",
+    "endTime": "2017/1/22 22:50",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Anthony Mack"
+    ]
+  },
+  {
+    "id": 691,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/22 11:44",
+    "endTime": "2017/1/22 11:44",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Francine Murray"
+    ]
+  },
+  {
+    "id": 895,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/22 10:6",
+    "endTime": "2017/1/22 10:6",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Dominguez Mcconnell"
+    ]
+  },
+  {
+    "id": 784,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/22 15:18",
+    "endTime": "2017/1/22 15:18",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Savannah Mason"
+    ]
+  }
+  {
+    "id": 741,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/15 14:26",
+    "endTime": "2017/1/15 14:26",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Carrillo Carney"
+    ]
+  },
+  {
+    "id": 40,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/15 12:30",
+    "endTime": "2017/1/15 12:30",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 870,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/15 14:31",
+    "endTime": "2017/1/15 14:31",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Eugenia Noel"
+    ]
+  },
+  {
+    "id": 914,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/15 17:14",
+    "endTime": "2017/1/15 17:14",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Ada Roman"
+    ]
+  },
+  {
+    "id": 171,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/15 20:8",
+    "endTime": "2017/1/15 20:8",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 13,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/15 15:43",
+    "endTime": "2017/1/15 15:43",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Rivers Hartman"
+    ]
+  },
+  {
+    "id": 20,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/15 18:14",
+    "endTime": "2017/1/15 18:14",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 445,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/15 12:20",
+    "endTime": "2017/1/15 12:20",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Rosie Sims"
+    ]
+  },
+  {
+    "id": 379,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/15 20:18",
+    "endTime": "2017/1/15 20:18",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 582,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/15 17:56",
+    "endTime": "2017/1/15 17:56",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Ingram Benton"
+    ]
+  },
+  {
+    "id": 739,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/15 16:22",
+    "endTime": "2017/1/15 16:22",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Campbell Moody"
+    ]
+  },
+  {
+    "id": 637,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/15 22:10",
+    "endTime": "2017/1/15 22:10",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 906,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/15 12:20",
+    "endTime": "2017/1/15 12:20",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Becky Zimmerman"
+    ]
+  },
+  {
+    "id": 956,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/15 16:31",
+    "endTime": "2017/1/15 16:31",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 79,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/15 18:23",
+    "endTime": "2017/1/15 18:23",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 401,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/15 12:36",
+    "endTime": "2017/1/15 12:36",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 318,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/15 21:38",
+    "endTime": "2017/1/15 21:38",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Mercado Boyer"
+    ]
+  },
+  {
+    "id": 777,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/15 17:1",
+    "endTime": "2017/1/15 17:1",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Roberta Freeman"
+    ]
+  }
+  {
+    "id": 456,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 14:40",
+    "endTime": "2017/1/31 14:40",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 284,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 17:7",
+    "endTime": "2017/1/31 17:7",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 396,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 21:47",
+    "endTime": "2017/1/31 21:47",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 410,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 21:33",
+    "endTime": "2017/1/31 21:33",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Eddie Carney"
+    ]
+  },
+  {
+    "id": 65,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 22:17",
+    "endTime": "2017/1/31 22:17",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Cardenas Contreras"
+    ]
+  },
+  {
+    "id": 67,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 20:39",
+    "endTime": "2017/1/31 20:39",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 775,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 15:34",
+    "endTime": "2017/1/31 15:34",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Margaret Church"
+    ]
+  },
+  {
+    "id": 888,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 22:30",
+    "endTime": "2017/1/31 22:30",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Jenny Knox"
+    ]
+  },
+  {
+    "id": 575,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 14:0",
+    "endTime": "2017/1/31 14:0",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 776,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 22:28",
+    "endTime": "2017/1/31 22:28",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 627,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 19:26",
+    "endTime": "2017/1/31 19:26",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Torres Beach"
+    ]
+  },
+  {
+    "id": 604,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 18:44",
+    "endTime": "2017/1/31 18:44",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  },
+  {
+    "id": 666,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 21:59",
+    "endTime": "2017/1/31 21:59",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Thompson Harding"
+    ]
+  },
+  {
+    "id": 365,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 19:34",
+    "endTime": "2017/1/31 19:34",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      "Golden Terry"
+    ]
+  },
+  {
+    "id": 417,
+    "disciplineId": "disc-111",
+    "startTime": "2017/1/31 19:28",
+    "endTime": "2017/1/31 19:28",
+    "intervals": false,
+    "studentLimit": null,
+    "students": [
+      ""
+    ]
+  }
+  {
+    "id": 869,
+    "disciplineId": "disc-222",
+    "startTime": "2017/1/12 13:7",
+    "endTime": "2017/1/12 13:7",
+    "intervals": true,
+    "studentLimit": 20,
+    "students": [
+      "Linda Knapp",
+      "Kimberly Franco",
+      "Eliza Burns",
+      "Berger Le",
+      "Brandi Mann",
+      "Rhea Gibson",
+      "Estrada Sears",
+      "Dena Hampton",
+      "Bright Rodriguez",
+      "Allie Ferguson",
+      "Evans Montoya",
+      "Ryan Gay",
+      "Laurie Hammond",
+      "Simmons Phillips",
+      "Wood Colon",
+      "Alston Norman",
+      "Brock Noel",
+      "Buckner Mclaughlin",
+      "Smith Mack",
+      "Morton Burke"
+    ]
+  }
+  {
+    "id": 736,
+    "disciplineId": "disc-222",
+    "startTime": "2017/1/19 13:13",
+    "endTime": "2017/1/19 13:13",
+    "intervals": true,
+    "studentLimit": 20,
+    "students": [
+      "Dodson Chase",
+      "Sandy Daugherty",
+      "Adriana Barker",
+      "Winnie Mason",
+      "Mccall Charles",
+      "Elvira Young",
+      "Alejandra Davis",
+      "Bray Bishop",
+      "Dean Espinoza",
+      "Cannon Spence",
+      "Sargent Kirkland",
+      "Minerva Benton",
+      "Clay Malone",
+      "Kate Hansen",
+      "Conley Montgomery",
+      "Barber Flynn",
+      "Cardenas Woods"
+    ]
+  }
+  {
+    "id": 614,
+    "disciplineId": "disc-222",
+    "startTime": "2017/1/5 10:35",
+    "endTime": "2017/1/5 10:35",
+    "intervals": true,
+    "studentLimit": 25,
+    "students": [
+      "Marie Woodard",
+      "Christensen Berger",
+      "Patterson Norman",
+      "Lessie Montgomery",
+      "Woodard Avila",
+      "Tabitha Wilson",
+      "Reed Cash",
+      "Jensen Hoover",
+      "Wolfe Franklin",
+      "Mia Velasquez",
+      "Kristen Barrett",
+      "Sawyer Schroeder",
+      "Maritza Hood",
+      "Gladys Bean",
+      "Sosa Phillips",
+      "Bradley Gould",
+      "Hansen Gaines",
+      "Claudine Middleton",
+      "Celina James"
+    ]
+  }
+  {
+    "id": 813,
+    "disciplineId": "disc-222",
+    "startTime": "2017/1/31 18:0",
+    "endTime": "2017/1/31 18:0",
+    "intervals": true,
+    "studentLimit": 20,
+    "students": [
+      "Schneider Irwin",
+      "Kidd Suarez",
+      "Schwartz Hicks",
+      "Wynn Mccoy",
+      "Townsend Gray",
+      "Amelia Romero",
+      "Boyd Meadows",
+      "Sharpe Lott",
+      "Dominique Waters",
+      "Viola Reyes",
+      "Kristie Kelly",
+      "Gates Sandoval",
+      "Nichols Camacho"
+    ]
+  }  
+]
