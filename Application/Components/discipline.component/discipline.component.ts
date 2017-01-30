@@ -48,7 +48,7 @@ export class DisciplineComponent implements OnInit {
 	}
 
 	loadMonth( year: number, month: number ){
-		this.dataManager.getExamensFromService( this.discipline.id, year, month );
+		this.dataManager.getExamensNew( this.discipline.id, year, month );
 	}
 
 	loadNextOrPreviusMonth( direction?: boolean, anyMonth?: string ){
