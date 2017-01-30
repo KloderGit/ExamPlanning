@@ -1,11 +1,11 @@
-import { ExamenModel } from './../Models/examen.model';
+import { ExamenModelNew } from './../Models/examen-new.model';
 import { Pipe, PipeTransform } from '@angular/core';
  
 @Pipe({
     name: 'monthFromExamens'
 })
 export class MonthFromExamensPipe implements PipeTransform {
-  transform(array: ExamenModel[]) {
+  transform(array: ExamenModelNew[]) {
 
       return array.map( item => {
                             let tempDate = new Date ( item.startTime.getFullYear(), item.startTime.getMonth() );

@@ -2,9 +2,6 @@ import {
     ExamenModelNew
 } from './../../Models/examen-new.model';
 import {
-    ExamenModel
-} from './../../Models/examen.model';
-import {
     DisciplineModel
 } from './../../Models/discipline.model';
 import {
@@ -50,34 +47,29 @@ export class DataManager {
 
     //  Экзамены
 
-    // getExamensFromService(disciplineId: string, year: number, month: number) {
-    //     this.service.getExamensForDiscipline(disciplineId, year, month)
-    //         .then(data => {
-    //             for (let i = 0; i < data.length; i++) {
-    //                 this.examens.push(data[i]);
-    //             }
-    //             console.log('DataManager: Получены экзамены из сервиса на месяц - ' + year + "/" + month)
-    //         });
-    // }
-
     getExamensByDiscipline(disciplineId: string) {
         return this.examens.filter(item => item.disciplineId == disciplineId);
     }
 
-    // getExamensFromServiceAll(disciplineId: string) {
-    //     this.service.getExamensForDisciplineAll(disciplineId)
-    //         .then(data => {
-    //             this.examens = [];
-    //             for (let i = 0; i < data.length; i++) {
-    //                 this.examens.push(data[i]);
-    //             }
-    //             console.log('DataManager: Получены все экзамены из сервиса')
-    //         });
-    // }
+    getExamensFromService(disciplineId: string, year: number, month: number) {
+        this.service.getExamensForDiscipline(disciplineId, year, month)
+            .then(data => {
+               for (var i = 0; i < data.length; i++) {
+                   let ex = new ExamenModelNew();
+                   ex.id = data[i].id;
+                   ex.disciplineId = data[i].disciplineId;
+                   ex.startTime = data[i].startTime;
+                   ex.endTime = data[i].endTime;
+                   ex.isShared = data[i].isShared;
+                   ex.limit = data[i].limit;
+                   ex.students = data[i].students;
+                   this.examens.push( ex  );
+               }
+                console.log('DataManager: Получены экзамены из сервиса на месяц - ' + year + "/" + month);
+            });
+    }
 
     addExamen(inObject: any) {
-            console.log(inObject);
-
         for (let i = 0; i < inObject.length; i++) {
             
             let ex = new ExamenModelNew();
@@ -91,17 +83,5 @@ export class DataManager {
 
             this.examens.push(ex);
         }
-
     }
-
-    getExamensNew(disciplineId: string, year: number, month: number) {
-        this.service.getExamensNew(disciplineId, year, month)
-            .then(data => {
-                for (let i = 0; i < data.length; i++) {
-                    this.examens.push(data[i]);
-                }
-                console.log('DataManager: Получены экзамены из сервиса на месяц - ' + year + "/" + month);
-            });
-    }
-
 }

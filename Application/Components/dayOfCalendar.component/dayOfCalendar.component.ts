@@ -1,5 +1,4 @@
 import { ExamenModelNew } from './../../Models/examen-new.model';
-import { ExamenModel } from './../../Models/examen.model';
 import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 
 declare var $:any;
