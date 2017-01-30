@@ -76,11 +76,10 @@ export class ServiseFromJson{
                    ex.isShared = array[i].isShared;
                    ex.limit = array[i].limit;
                    ex.students = array[i].students;
-
-                    temp.push( ex  );
+                   temp.push( ex  );
                }
 
-               console.log('Service: Сервис получил экзамены', temp); 
+               console.log('Service: Сервис получил экзамены'); 
                return temp.filter( item => item.disciplineId == disciplineId )
                           .filter( item => new Date(item.startTime).getFullYear() == year )
                           .filter( item => new Date(item.startTime).getMonth() == month );

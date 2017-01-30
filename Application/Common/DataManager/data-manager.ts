@@ -75,25 +75,24 @@ export class DataManager {
     //         });
     // }
 
-    // addExamen(inObject: any) {
+    addExamen(inObject: any) {
+            console.log(inObject);
 
-    //     for (let i = 0; i < inObject.length; i++) {
-    //         let ex = new ExamenModelNew();
-    //         ex.id = "new"
-    //         ex.disciplineId = "disc-111";
-    //         ex.guid = "c4b67ca4-f51d-4a29-a740-49cba471ec28";
-    //         ex.startTime = inObject[i].startTime;
-    //         ex.endTime = inObject[i].endTime;
-    //         ex.student = undefined;
-    //         ex.studentplace = false;
-    //         ex.rate = "0";
+        for (let i = 0; i < inObject.length; i++) {
+            
+            let ex = new ExamenModelNew();
+            ex.id = "new";
+            ex.disciplineId = "disc-111";
+            ex.startTime = inObject[i].startTime;
+            ex.endTime = inObject[i].endTime;
+            ex.isShared = inObject[i].countPlace != 1 ? true : false;
+            ex.limit = inObject[i].countPlace != 1 ? inObject[i].countPlace : null;
+            ex.students = [];
 
-    //         this.examens.push(ex);
-    //         console.log(ex);
+            this.examens.push(ex);
+        }
 
-    //     }
-
-    // }
+    }
 
     getExamensNew(disciplineId: string, year: number, month: number) {
         this.service.getExamensNew(disciplineId, year, month)
@@ -102,7 +101,6 @@ export class DataManager {
                     this.examens.push(data[i]);
                 }
                 console.log('DataManager: Получены экзамены из сервиса на месяц - ' + year + "/" + month);
-                console.log(this.examens);
             });
     }
 

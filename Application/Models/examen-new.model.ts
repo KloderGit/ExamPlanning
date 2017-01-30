@@ -9,10 +9,10 @@ export class ExamenModelNew{
 
     students: Array<string>;
 
-    public get startTime() {
+    public get startTime() : Date {
         return this._startTime;
     }
-    public set startTime(value: Date | string) {
+    public set startTime(value) {
         this._startTime = new Date(value);
     }
     public get endTime() {

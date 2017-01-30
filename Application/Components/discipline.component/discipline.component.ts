@@ -81,8 +81,4 @@ export class DisciplineComponent implements OnInit {
 		this.loadMonth( year, month );
 	}
 
-	rrr(){
-		// console.log( this.examens );
-	}
-
 }
