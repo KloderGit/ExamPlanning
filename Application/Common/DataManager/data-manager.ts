@@ -1,6 +1,6 @@
 import {
-    ExamenModelNew
-} from './../../Models/examen-new.model';
+    ExamenModel
+} from './../../Models/examen.model';
 import {
     DisciplineModel
 } from './../../Models/discipline.model';
@@ -18,7 +18,7 @@ import {
 export class DataManager {
 
     disciplines: DisciplineModel[] = new Array();
-    examens: ExamenModelNew[] = new Array();
+    examens: ExamenModel[] = new Array();
 
     constructor(private service: ServiseFromJson) {
         console.log('Создание DataManager');
@@ -55,7 +55,7 @@ export class DataManager {
         this.service.getExamensForDiscipline(disciplineId, year, month)
             .then(data => {
                for (var i = 0; i < data.length; i++) {
-                   let ex = new ExamenModelNew();
+                   let ex = new ExamenModel();
                    ex.id = data[i].id;
                    ex.disciplineId = data[i].disciplineId;
                    ex.startTime = data[i].startTime;
@@ -72,7 +72,7 @@ export class DataManager {
     addExamen(inObject: any) {
         for (let i = 0; i < inObject.length; i++) {
             
-            let ex = new ExamenModelNew();
+            let ex = new ExamenModel();
             ex.id = "new";
             ex.disciplineId = "disc-111";
             ex.startTime = inObject[i].startTime;

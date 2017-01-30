@@ -1,4 +1,4 @@
-import { ExamenModelNew } from './../../Models/examen-new.model';
+import { ExamenModel } from './../../Models/examen.model';
 import { MonthGrid } from './../../Models/Calendar/month-grid';
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 
 export class MonthComponent implements OnInit {
-	@Input() examens: ExamenModelNew[] = new Array();
+	@Input() examens: ExamenModel[] = new Array();
 
 	grid: MonthGrid;
 

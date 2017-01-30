@@ -1,4 +1,4 @@
-export class ExamenModelNew{    
+export class ExamenModel{    
     id: string;
     disciplineId: string;
     private _startTime: Date;

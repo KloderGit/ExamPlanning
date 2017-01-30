@@ -1,4 +1,4 @@
-import { ExamenModelNew } from './../../Models/examen-new.model';
+import { ExamenModel } from './../../Models/examen.model';
 import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 
 declare var $:any;
@@ -11,13 +11,11 @@ declare var $:any;
 })
 
 export class DayOfCalendarComponent implements OnInit, AfterViewInit, OnDestroy {
-	@Input() examens: ExamenModelNew[];
+	@Input() examens: ExamenModel[];
 	@ViewChild("popoverTag") popoverTag: ElementRef;
 	@ViewChild("pieChart") pieChart: ElementRef;
 
-	ngOnInit() {
-		console.log( this.currentStudentsInvited().length, this.countExamensOfDay() );
-	}
+	ngOnInit() {}
 
 	ngAfterViewInit(){
 
