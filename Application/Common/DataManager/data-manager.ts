@@ -30,7 +30,14 @@ export class DataManager {
     private loadDisciplines() {
         this.service.getDisciplinesAll()
             .then(data => {
-                this.disciplines = data;
+               for (var i = 0; i < data.length; i++) {
+                   let dscp = new DisciplineModel();
+                   dscp.id = data[i].id;
+                   dscp.title = data[i].title;
+                   dscp.teacherId = data[i].teacherId;
+                   dscp.active = data[i].active;
+                   this.disciplines.push( dscp );
+               }
                 console.log('DataManager: Получены дисциплины из сервиса')
             });
     }
@@ -74,7 +81,7 @@ export class DataManager {
             
             let ex = new ExamenModel();
             ex.id = "new";
-            ex.disciplineId = "disc-111";
+            ex.disciplineId = inObject[i].disciplineId;
             ex.startTime = inObject[i].startTime;
             ex.endTime = inObject[i].endTime;
             ex.isShared = inObject[i].countPlace != 1 ? true : false;

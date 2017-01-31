@@ -1,6 +1,6 @@
 import { TimepickerComponent } from './../timepicker.component/timepicker.component';
 import { DataManager } from './../../Common/DataManager/data-manager';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { addFirstZero } from './../../Common/function.common'
 
@@ -16,8 +16,9 @@ declare var $:any;
 export class AddExamensComponent implements OnInit {
 
 	date: Date = new Date();
+	disciplineId: string;
 
-	divided: { startTime: Date, endTime: Date, isSelected: boolean, countPlace: number }[] = [];
+	divided: { startTime: Date, endTime: Date, isSelected: boolean, disciplineId: string, countPlace: number }[] = [];
 
 	divideBy: number = 10;
 	divideByCheck: boolean = false;
@@ -34,13 +35,16 @@ export class AddExamensComponent implements OnInit {
  	};
 
 	constructor( private route: ActivatedRoute,
+				 private router: Router,
 				 private dataManager: DataManager){
 		console.log("Создан компонент создания экзаменов");
 	}
 
 	ngOnInit() {
-		let urlParam = this.route.snapshot.params['date'];
-		this.date.setTime(urlParam);
+		let date = this.route.snapshot.params['date'];
+		this.disciplineId = this.route.snapshot.params['discipline'];
+
+		this.date.setTime(date);
 		this.date.setHours(0,0,0);
 
 		this.formState =
@@ -111,10 +115,12 @@ export class AddExamensComponent implements OnInit {
 
 		if ( this.formState.type.value == 'collective'){
 			let result = [
-				{ startTime: this.formState.startTime, endTime: this.formState.endTime, countPlace: this.formState.studentCount }
+				{ startTime: this.formState.startTime, endTime: this.formState.endTime, disciplineId: this.disciplineId, countPlace: this.formState.studentCount }
 			];
 			this.dataManager.addExamen( result );		
 		}
+
+		this.router.navigate(['/discipline', this.disciplineId ]);
 		
 	}
 
@@ -159,8 +165,17 @@ export class AddExamensComponent implements OnInit {
 			tm.setMinutes(index);
 			let mt = new Date(stT);
 			mt.setMinutes(index+n);
-			this.divided[i] = { startTime: tm, endTime: mt, isSelected: true, countPlace: 1 };
+			this.divided[i] = { startTime: tm, endTime: mt, isSelected: true, disciplineId: this.disciplineId, countPlace: 1 };
 			index +=n;
 		}
 	}
+
+	getDiscipline(){
+		return this.dataManager.getDiscipline( this.disciplineId );
+	}
+
+	getMonthName(){
+		let str = this.formState.startTime.toLocaleString("ru-ru", { month: "long" }) + " " + this.formState.startTime.getFullYear();
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    } 
 }

@@ -28,7 +28,7 @@ export class MonthComponent implements OnInit {
     } 
 
 	editDay( date: Date ){
-		this.router.navigate(['/addexamens', + date ]);
+		this.router.navigate(['/addexamens', +date,  this.examens[0].disciplineId ]);
 	}
 
 }
