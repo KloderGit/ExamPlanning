@@ -12,7 +12,7 @@ export class LoggerService{
     addMessage( mes: { title: string, message: string, type: string } ){
         let conntext = this;
         this.messages.push( { title: mes.title, message: mes.message, isShow: true, type: mes.type, fadeOut: false});
-        setTimeout(function() { conntext.messages.forEach( item => item.isShow = false); }, 2000);
-        setTimeout(function() { conntext.messages.forEach( item => item.fadeOut = true ); }, 1500);
+        setTimeout(function() { conntext.messages.forEach( item => item.isShow = false); }, 3000);
+        setTimeout(function() { conntext.messages.forEach( item => item.fadeOut = true ); }, 2000);
     }
 }
