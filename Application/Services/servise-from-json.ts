@@ -23,6 +23,16 @@ export class ServiseFromJson{
         );
     }
 
+    getTeachersAll(){
+        return this.http.get('/Application/MockData/teachers-mock-data.json')
+        .toPromise()
+        .then( ( res ) => { 
+               let temp = res.json() as TeacherModel[]; 
+               console.log('Service: Сервис получил преподавателей'); 
+               return temp; }
+        );
+    }    
+
     getExamensForDiscipline( disciplineId: string, year: number, month: number ){
         return this.http.get('/Application/MockData/examens-mock-data2.json')
         .toPromise()

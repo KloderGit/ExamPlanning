@@ -20,11 +20,13 @@ export class DataManager {
 
     disciplines: DisciplineModel[] = new Array();
     examens: ExamenModel[] = new Array();
+    teachers: TeacherModel[] = new Array();
 
     constructor(private service: ServiseFromJson,
                 private logger: LoggerService
     ) {
         console.log('Создание DataManager');
+        this.loadTeachers();
         this.loadDisciplines();
     }
 
@@ -39,14 +41,36 @@ export class DataManager {
                    dscp.title = data[i].title;
                    dscp.teacherId = data[i].teacherId;
                    dscp.active = data[i].active;
+                   dscp.format = data[i].format;
                    this.disciplines.push( dscp );
                }
                 console.log('DataManager: Получены дисциплины из сервиса')
             });
     }
 
+    private loadTeachers() {
+        this.service.getTeachersAll()
+            .then(data => {
+               for (var i = 0; i < data.length; i++) {
+                   let thr = new TeacherModel();
+                   thr.id = data[i].id;
+                   thr.name = data[i].name;
+                   this.teachers.push( thr );
+               }
+                console.log('DataManager: Получены преподаатели из сервиса', this.teachers)
+            });
+    }
+
     getDisciplinesAll() {
         return this.disciplines;
+    }
+
+    getTeachersAll() {
+        return this.teachers;
+    }
+
+    getTeacherById( id: string ) {
+        return this.teachers[ this.teachers.map( item => item.id ).indexOf(id) ];
     }
 
     getDiscipline(id: string) {
