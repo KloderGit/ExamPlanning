@@ -1,3 +1,4 @@
+import { LoggerService } from './../Services/logger.service';
 import { NgModule, Component } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
@@ -23,7 +24,7 @@ var routerMaps = RouterModule.forRoot([
     imports: [ BrowserModule, HttpModule, routerMaps ],
     declarations: [ AppComponent, DisciplinesListComponent ],
     bootstrap: [ AppComponent ],
-    providers: [ ServiseFromJson, DataManager ]
+    providers: [ ServiseFromJson, DataManager, LoggerService ]
 })
 
 export class MainModule {}

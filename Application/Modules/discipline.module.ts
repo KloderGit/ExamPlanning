@@ -6,8 +6,6 @@ import { ExamensForDayPipe } from './../Pipes/examensForDay';
 import { ExamensForMonthPipe } from './../Pipes/examensForMonth.pipe';
 import { MonthFromExamensPipe } from './../Pipes/monthFromExamens.pipe';
 
-import { DataManager } from './../Common/DataManager/data-manager';
-
 import { RouterModule } from '@angular/router';
 import {CommonModule} from "@angular/common";
 import { NgModule } from '@angular/core';
