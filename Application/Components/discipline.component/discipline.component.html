@@ -6,7 +6,6 @@
         </div>
         <div class="col-sm-4">
             <div class="btn-group-vertical" role="group">
-                <button class="btn btn-default" (click)="loadNextOrPreviusMonth(false)"> Загрузить предыдущий месяц </button>
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">
                         <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
@@ -18,7 +17,7 @@
                         <button class="btn btn-default" type="button" (click) = "selectAnyMonth(inputMonth.value)">Загрузить</button>
                     </span>
                 </div>
-                <button class="btn btn-default" (click)="loadNextOrPreviusMonth(true)"> Загрузить следующий месяц </button>
+                <p><a (click) = "editDay()">Добавить экзамен</a></p>
             </div>
         </div>
     </div>

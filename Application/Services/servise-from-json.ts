@@ -24,31 +24,16 @@ export class ServiseFromJson{
     }
 
     getExamensForDiscipline( disciplineId: string, year: number, month: number ){
-        return this.http.get('/Application/MockData/examens-mock-data.json')
+        return this.http.get('/Application/MockData/examens-mock-data2.json')
         .toPromise()
-        .then( ( res ) => { 
-               let temp: ExamenModel[] = []; 
+        .then( ( res ) => {
                let array = res.json();
-               for (var i = 0; i < array.length; i++) {
-                    temp.push( new ExamenModel( array[i].id, array[i].startTime, array[i].endTime, array[i].disciplineId,
-                    array[i].student, array[i].studentplace, array[i].rate ) );
-               }
                console.log('Service: Сервис получил экзамены'); 
-               return temp.filter( item => item.disciplineId == disciplineId )
+               return array.filter( item => item.disciplineId == disciplineId )
                           .filter( item => new Date(item.startTime).getFullYear() == year )
                           .filter( item => new Date(item.startTime).getMonth() == month );
             }
         );        
     }
 
-    getExamensForDisciplineAll( disciplineId: string ){
-        return this.http.get('/Application/MockData/examens-mock-data.json')
-        .toPromise()
-        .then( ( res ) => { 
-               let temp = res.json() as ExamenModel[]; 
-               console.log('Service: Сервис получил экзамены'); 
-               return temp;
-            }
-        );        
-    }
 }

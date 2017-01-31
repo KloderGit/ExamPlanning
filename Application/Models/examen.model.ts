@@ -1,25 +1,24 @@
-
-export class ExamenModel{
-
+export class ExamenModel{    
     id: string;
-    guid: string;
     disciplineId: string;
-    startTime: Date;
-    endTime: Date;
+    private _startTime: Date;
+    private _endTime: Date;
 
-    studentplace: boolean;
-    student?: string;
-    rate?: string;
+    isShared: boolean;
+    limit: number;
 
+    students: Array<string>;
 
-    constructor( id?: string, startTime?: string, endtTime?: string, disciplineId?: string, 
-    student?: string, studentplace?: boolean, rate?: string ){
-        this.id = id;
-        this.startTime = new Date (startTime);
-        this.endTime = new Date (endtTime);
-        this.disciplineId = disciplineId;
-        this.student = student;
-        this.studentplace = studentplace;
-        this.rate = rate;
+    public get startTime() : Date {
+        return this._startTime;
     }
+    public set startTime(value) {
+        this._startTime = new Date(value);
+    }
+    public get endTime() {
+        return this._endTime;
+    }
+    public set endTime(value: Date | string) {
+        this._endTime = new Date(value);
+    }    
 }

@@ -1,8 +1,18 @@
-import { ExamenModel } from './../../Models/examen.model';
-import { DisciplineModel } from './../../Models/discipline.model';
-import { TeacherModel } from './../../Models/teacher.model';
-import { ServiseFromJson } from './../../Services/servise-from-json';
-import { Injectable } from '@angular/core';
+import {
+    ExamenModel
+} from './../../Models/examen.model';
+import {
+    DisciplineModel
+} from './../../Models/discipline.model';
+import {
+    TeacherModel
+} from './../../Models/teacher.model';
+import {
+    ServiseFromJson
+} from './../../Services/servise-from-json';
+import {
+    Injectable
+} from '@angular/core';
 
 @Injectable()
 export class DataManager {
@@ -10,75 +20,75 @@ export class DataManager {
     disciplines: DisciplineModel[] = new Array();
     examens: ExamenModel[] = new Array();
 
-    constructor( private service: ServiseFromJson ){
+    constructor(private service: ServiseFromJson) {
         console.log('Создание DataManager');
         this.loadDisciplines();
     }
 
-//  Дисциплины
+    //  Дисциплины
 
-    private loadDisciplines(){
+    private loadDisciplines() {
         this.service.getDisciplinesAll()
-                    .then( data => { this.disciplines = data; console.log('DataManager: Получены дисциплины из сервиса') } );
+            .then(data => {
+               for (var i = 0; i < data.length; i++) {
+                   let dscp = new DisciplineModel();
+                   dscp.id = data[i].id;
+                   dscp.title = data[i].title;
+                   dscp.teacherId = data[i].teacherId;
+                   dscp.active = data[i].active;
+                   this.disciplines.push( dscp );
+               }
+                console.log('DataManager: Получены дисциплины из сервиса')
+            });
     }
 
-    getDisciplinesAll(){
-       return this.disciplines;
+    getDisciplinesAll() {
+        return this.disciplines;
     }
 
-    getDiscipline( id: string ){
+    getDiscipline(id: string) {
         let index = this.disciplines.map(x => x.id).indexOf(id);
         return this.disciplines[index];
     }
 
 
-//  Экзамены
+    //  Экзамены
 
-    getExamensFromService( disciplineId: string, year: number, month: number ){
-        this.service.getExamensForDiscipline( disciplineId, year, month )
-                           .then( data => { 
-                               for( let i=0; i< data.length; i++){
-                                   this.examens.push(data[i]);
-                               }                               
-                               console.log('DataManager: Получены экзамены из сервиса на месяц - ' + year + "/" + month) 
-                            }
-                     );
+    getExamensByDiscipline(disciplineId: string) {
+        return this.examens.filter(item => item.disciplineId == disciplineId);
     }
 
-    getExamensByDiscipline( disciplineId: string  ) {
-        return this.examens.filter( item => item.disciplineId == disciplineId );
+    getExamensFromService(disciplineId: string, year: number, month: number) {
+        this.service.getExamensForDiscipline(disciplineId, year, month)
+            .then(data => {
+               for (var i = 0; i < data.length; i++) {
+                   let ex = new ExamenModel();
+                   ex.id = data[i].id;
+                   ex.disciplineId = data[i].disciplineId;
+                   ex.startTime = data[i].startTime;
+                   ex.endTime = data[i].endTime;
+                   ex.isShared = data[i].isShared;
+                   ex.limit = data[i].limit;
+                   ex.students = data[i].students;
+                   this.examens.push( ex  );
+               }
+                console.log('DataManager: Получены экзамены из сервиса на месяц - ' + year + "/" + month);
+            });
     }
 
-    getExamensFromServiceAll( disciplineId: string ){
-        this.service.getExamensForDisciplineAll( disciplineId )
-                           .then( data => { 
-                               this.examens = [];
-                               for( let i=0; i< data.length; i++){
-                                   this.examens.push(data[i]);
-                               }                            
-                               console.log('DataManager: Получены все экзамены из сервиса') 
-                            }
-                     );
-    }
-
-    addExamen( inObject: any ){
-
-        for (let i=0; i<inObject.length; i++){
+    addExamen(inObject: any) {
+        for (let i = 0; i < inObject.length; i++) {
+            
             let ex = new ExamenModel();
-            ex.id = "new"
-            ex.disciplineId = "disc-111";
-            ex.guid = "c4b67ca4-f51d-4a29-a740-49cba471ec28";
+            ex.id = "new";
+            ex.disciplineId = inObject[i].disciplineId;
             ex.startTime = inObject[i].startTime;
             ex.endTime = inObject[i].endTime;
-            ex.student = undefined;
-            ex.studentplace = false;
-            ex.rate = "0";
+            ex.isShared = inObject[i].countPlace != 1 ? true : false;
+            ex.limit = inObject[i].countPlace != 1 ? inObject[i].countPlace : null;
+            ex.students = [];
 
             this.examens.push(ex);
-                    console.log(ex);
-
         }
-
     }
-
 }

@@ -51,22 +51,6 @@ export class DisciplineComponent implements OnInit {
 		this.dataManager.getExamensFromService( this.discipline.id, year, month );
 	}
 
-	loadNextOrPreviusMonth( direction?: boolean, anyMonth?: string ){
-		let year: number;
-		let month: number;
-
-			let months = this.getExamens().map( item => +item.startTime );
-
-			let toggle = direction ? 1: -1;
-			let timestamp = direction ? Math.max.apply( Math, months ) : Math.min.apply( Math, months );
-			let date = new Date(timestamp);
-			date.setMonth(date.getMonth() + toggle);
-			year = date.getFullYear();
-			month = date.getMonth();
-
-		this.loadMonth( year, month );		
-	}
-
 	selectAnyMonth( anyMonth: string ){
 
 		if ( anyMonth =="" || anyMonth == undefined){
@@ -81,8 +65,8 @@ export class DisciplineComponent implements OnInit {
 		this.loadMonth( year, month );
 	}
 
-	rrr(){
-		// console.log( this.examens );
+	editDay(){
+		this.router.navigate(['/addexamens', + new Date(),  this.discipline.id ]);
 	}
 
 }

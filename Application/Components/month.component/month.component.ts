@@ -1,5 +1,5 @@
-import { MonthGrid } from './../../Models/Calendar/month-grid';
 import { ExamenModel } from './../../Models/examen.model';
+import { MonthGrid } from './../../Models/Calendar/month-grid';
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -28,7 +28,7 @@ export class MonthComponent implements OnInit {
     } 
 
 	editDay( date: Date ){
-		this.router.navigate(['/addexamens', + date ]);
+		this.router.navigate(['/addexamens', +date,  this.examens[0].disciplineId ]);
 	}
 
 }
