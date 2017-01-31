@@ -1,3 +1,4 @@
+import { LoggerService } from './../../Services/logger.service';
 import { TimepickerComponent } from './../timepicker.component/timepicker.component';
 import { DataManager } from './../../Common/DataManager/data-manager';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -36,6 +37,7 @@ export class AddExamensComponent implements OnInit {
 
 	constructor( private route: ActivatedRoute,
 				 private router: Router,
+				 private logger: LoggerService,
 				 private dataManager: DataManager){
 		console.log("Создан компонент создания экзаменов");
 	}
@@ -111,13 +113,15 @@ export class AddExamensComponent implements OnInit {
 
 		if ( this.formState.type.value == 'personal'){
 			this.dataManager.addExamen( this.divided.filter( item => item.isSelected) );
+			this.logger.addMessage( { title: 'Создание экзаменов', message: 'Создано ' + this.divided.filter( item => item.isSelected).length + ' экзаменов. Успешно.', type: 'success' } );		
 		} 
 
 		if ( this.formState.type.value == 'collective'){
 			let result = [
 				{ startTime: this.formState.startTime, endTime: this.formState.endTime, disciplineId: this.disciplineId, countPlace: this.formState.studentCount }
 			];
-			this.dataManager.addExamen( result );		
+			this.dataManager.addExamen( result );
+			this.logger.addMessage( { title: 'Создание экзаменов', message: 'Создано ' + result[0].countPlace + ' экзаменов. Успешно.', type: 'success' } );
 		}
 
 		this.router.navigate(['/discipline', this.disciplineId ]);

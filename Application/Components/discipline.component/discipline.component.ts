@@ -1,3 +1,4 @@
+import { LoggerService } from './../../Services/logger.service';
 import { DataManager } from './../../Common/DataManager/data-manager';
 import { DisciplineModel } from './../../Models/discipline.model';
 import { Component, OnInit } from '@angular/core';
@@ -17,6 +18,7 @@ export class DisciplineComponent implements OnInit {
 
 	constructor( private route: ActivatedRoute,
 				 private router: Router,
+				 private logger: LoggerService,
 				 private dataManager: DataManager){
 		console.log("Создан компонент Дисциплины");
 	}
@@ -49,6 +51,7 @@ export class DisciplineComponent implements OnInit {
 
 	loadMonth( year: number, month: number ){
 		this.dataManager.getExamensFromService( this.discipline.id, year, month );
+		this.logger.addMessage( { title: 'DataManager', message: 'Загружены данные: год - ' + year + ', месяц - ' + month, type: 'success' } );		
 	}
 
 	selectAnyMonth( anyMonth: string ){

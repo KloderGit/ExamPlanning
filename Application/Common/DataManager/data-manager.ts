@@ -1,3 +1,4 @@
+import { LoggerService } from './../../Services/logger.service';
 import {
     ExamenModel
 } from './../../Models/examen.model';
@@ -20,7 +21,9 @@ export class DataManager {
     disciplines: DisciplineModel[] = new Array();
     examens: ExamenModel[] = new Array();
 
-    constructor(private service: ServiseFromJson) {
+    constructor(private service: ServiseFromJson,
+                private logger: LoggerService
+    ) {
         console.log('Создание DataManager');
         this.loadDisciplines();
     }
