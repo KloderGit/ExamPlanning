@@ -12,23 +12,25 @@ import { Router } from '@angular/router';
 
 export class MonthComponent implements OnInit {
 	@Input() examens: ExamenModel[] = new Array();
-
+	@Input() timestamp: Date;
+	@Input() disciplineID: string;
 	grid: MonthGrid;
 
 	constructor( private router: Router ){
 	}
 
 	ngOnInit() {
-		this.grid = new MonthGrid( this.examens[0].startTime );
+		this.grid = new MonthGrid( new Date ( this.timestamp) );
 	}
 
 	getMonthName(){
-		let str = this.examens[0].startTime.toLocaleString("ru-ru", { month: "long" }) + " " + this.examens[0].startTime.getFullYear();
+		let dateForLocal = new Date( this.timestamp );
+		let str = dateForLocal.toLocaleString("ru-ru", { month: "long" }) + " " + dateForLocal.getFullYear();
         return str.charAt(0).toUpperCase() + str.slice(1);
     } 
 
 	editDay( date: Date ){
-		this.router.navigate(['/addexamens', +date,  this.examens[0].disciplineId ]);
+		this.router.navigate(['/addexamens', +date,  this.disciplineID ]);
 	}
 
 }

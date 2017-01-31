@@ -1,10 +1,10 @@
+import { ObjectToMonthTimestampPipe } from './../Pipes/objToMonthPipe';
 import { DisciplineComponent } from './../Components/discipline.component/discipline.component';
 import { MonthComponent } from './../Components/month.component/month.component';
 import { DayOfCalendarComponent } from './../Components/dayOfCalendar.component/dayOfCalendar.component';
 
 import { ExamensForDayPipe } from './../Pipes/examensForDay';
 import { ExamensForMonthPipe } from './../Pipes/examensForMonth.pipe';
-import { MonthFromExamensPipe } from './../Pipes/monthFromExamens.pipe';
 
 import { RouterModule } from '@angular/router';
 import {CommonModule} from "@angular/common";
@@ -16,6 +16,9 @@ export const routerConfig = [{
 
 @NgModule({
     imports: [CommonModule, RouterModule.forChild(routerConfig)],
-    declarations: [ DisciplineComponent, MonthComponent, MonthFromExamensPipe, ExamensForMonthPipe, ExamensForDayPipe, DayOfCalendarComponent]
+    declarations: [ DisciplineComponent, 
+                    MonthComponent, 
+                    ExamensForMonthPipe, ExamensForDayPipe,
+                    DayOfCalendarComponent, ObjectToMonthTimestampPipe]
 })
 export default class HomeModule {}

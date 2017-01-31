@@ -22,6 +22,8 @@ export class DataManager {
     examens: ExamenModel[] = new Array();
     teachers: TeacherModel[] = new Array();
 
+    monthLoadedTabel: { disciplineID: string, year: number, month: number }[] = [];
+
     constructor(private service: ServiseFromJson,
                 private logger: LoggerService
     ) {
@@ -29,6 +31,17 @@ export class DataManager {
         this.loadTeachers();
         this.loadDisciplines();
     }
+
+    //  Реестр загруженных месяцев
+
+    getLoadedMonth( disciplineID: string ){
+        return this.monthLoadedTabel.filter( obj => obj.disciplineID == disciplineID );
+    }
+
+    addLoadedMonth( obj: { disciplineID: string, year: number, month: number } ){
+        this.monthLoadedTabel.push( obj );
+    }
+
 
     //  Дисциплины
 
@@ -99,7 +112,8 @@ export class DataManager {
                    ex.students = data[i].students;
                    this.examens.push( ex  );
                }
-                console.log('DataManager: Получены экзамены из сервиса на месяц - ' + year + "/" + month);
+                this.logger.addMessage( { title: 'DataManager', message: 'Загружены данные: год - ' + year + ', месяц - ' + (month +1), type: 'success' } );		
+                this.addLoadedMonth( { disciplineID: disciplineId, year: year, month: month } );
             });
     }
 

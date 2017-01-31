@@ -30,12 +30,17 @@ export class DisciplineComponent implements OnInit {
 		if ( this.discipline == undefined ) {
 			this.router.navigate(['/disciplines']); 
 		} else {
-			if ( this.getExamens().length == 0 ){ this.loadMonth( new Date().getFullYear(), new Date().getMonth() ) }			
+			let currentDate = new Date();
+			let curentIsLoaded = this.getMonthLoaded()
+										.filter( yar => yar.year == currentDate.getFullYear())
+										.filter( mth => mth.month == currentDate.getMonth());
+			if ( curentIsLoaded.length == 0 ){
+				this.loadMonth( currentDate.getFullYear(), currentDate.getMonth() )
+			}			
 		}
 
 		this.dataPickerInit();
 	}
-
 
 	dataPickerInit(){
 		$('.datepicker-here').datepicker({
@@ -51,13 +56,14 @@ export class DisciplineComponent implements OnInit {
 
 	loadMonth( year: number, month: number ){
 		this.dataManager.getExamensFromService( this.discipline.id, year, month );
-		this.logger.addMessage( { title: 'DataManager', message: 'Загружены данные: год - ' + year + ', месяц - ' + month, type: 'success' } );		
 	}
 
 	selectAnyMonth( anyMonth: string ){
-
 		if ( anyMonth =="" || anyMonth == undefined){
-			alert("Укажите месяц для загрузки!");
+            this.logger.addMessage( 
+				{	title: 'Выбор месяца', 
+					message: 'Выберете месяц для загрузки...',
+					type: 'danger' } );		
 			return;
 		}
 
@@ -65,11 +71,20 @@ export class DisciplineComponent implements OnInit {
 		let year = parseInt(array[0]);
 		let month = parseInt(array[1]) - 1;
 
-		this.loadMonth( year, month );
+		let test = this.getMonthLoaded().filter( yr => yr.year == year )
+										.filter( mn => mn.month == month );
+
+		if (test.length > 0 ){
+            this.logger.addMessage( 
+				{	title: 'Выбор месяца', 
+					message: 'Этот месяц уже загружен...',
+					type: 'warning' } );				
+		} else {
+			this.loadMonth( year, month );
+		}				
 	}
 
-	editDay(){
-		this.router.navigate(['/addexamens', + new Date(),  this.discipline.id ]);
+	getMonthLoaded(){
+		return this.dataManager.getLoadedMonth( this.discipline.id );
 	}
-
 }

@@ -10,22 +10,34 @@
                     <span class="input-group-addon" id="basic-addon1">
                         <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
                     </span>
-                    <input type="text" id="selectMonts" class="datepicker-here form-control" data-min-view="months" data-view="months" data-date-format="MM yyyy"
-                        placeholder="Загрузить на выбор..." />
-                    <input style="display: none" type="text" id="dataPickerAlternate" #inputMonth/>
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" (click) = "selectAnyMonth(inputMonth.value)">Загрузить</button>
+                    <input  type="text" 
+                            id="selectMonts"
+                            class="datepicker-here form-control"
+                            data-min-view="months"
+                            data-view="months"
+                            data-date-format="MM yyyy"
+                            placeholder="Загрузить на выбор..." />
+
+                    <input  style="display: none"
+                            type="text"
+                            id="dataPickerAlternate"
+                            #inputMonth/>
+
+                    <span   class="input-group-btn">
+                        <button class="btn btn-default"
+                                type="button"
+                                (click) = "selectAnyMonth(inputMonth.value)">Загрузить</button>
                     </span>
                 </div>
-                <p><a (click) = "editDay()">Добавить экзамен</a></p>
             </div>
         </div>
     </div>
 </div>
 
-<!--<button (click)="rrr()"> adsdsd </button>-->
-
 <div *ngIf="discipline != undefined">
-    <month *ngFor="let month of getExamens() | monthFromExamens" [examens]="getExamens() | examensForMonth : month">
+    <month  *ngFor="let monthTimestamp of getMonthLoaded() | ObjToMonthPipe" 
+            [examens]="getExamens() | examensForMonth : monthTimestamp"
+            [timestamp] = "monthTimestamp"
+            [disciplineID] = "discipline.id">
     </month>
 </div>
