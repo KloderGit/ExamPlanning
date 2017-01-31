@@ -12,7 +12,7 @@
 				"guid": "dddd-2222-2222-2222",
 				"title": "Дистанционный экзвмен",
                 "teacherId": "111",
-                "active": true,
+                "active": false,
 				"format": "Дистанционное"
 			},
 			{

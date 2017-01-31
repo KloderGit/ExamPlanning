@@ -9,12 +9,42 @@ import { Component, OnInit } from '@angular/core';
 
 export class DisciplinesListComponent implements OnInit {
 
+	isActive: boolean = true;
+	forTeacher: string = 'all';
+
 	constructor( private dataManager: DataManager){}
 
 	ngOnInit() {}
 
 	getDisciplines(){
-		return this.dataManager.getDisciplinesAll();
+		let array = this.dataManager.getDisciplinesAll();
+
+		if ( this.isActive ){
+			array = array.filter( item => item.active );
+		}
+		if ( this.forTeacher != 'all'){
+			array = array.filter( item => item.teacherId == this.forTeacher );
+		}
+		
+		return array;
+	}
+
+	getTeacher( id: string ){
+		return this.dataManager.getTeacherById(id);
+	}
+
+	filterActiveChange( checked: boolean ){
+		this.isActive = checked;
+	}
+
+	filterTeacherChange( teacherId: string ){
+		console.log(teacherId);
+		this.forTeacher = teacherId;
+	}	
+
+	getCurrentTeachers(){
+		return	this.dataManager.getDisciplinesAll().map( item => this.getTeacher(item.teacherId) )
+					.filter( (value, index, self) => self.indexOf(value) === index );
 	}
 
 }
